@@ -1,6 +1,6 @@
 #![allow(dead_code)]
 #![allow(clippy::type_complexity)]
-use daggy::{petgraph::graph::IndexType, Dag, NodeIndex, Walker};
+use daggy::{petgraph::Direction, Dag, EdgeIndex, NodeIndex, Walker};
 use num_traits::Float;
 use std::{fmt, fs::File, io::Write};
 
@@ -11,7 +11,7 @@ where
     data: T,
     grad: T,
     op: Option<Op>,
-    grad_fn: Option<Box<dyn GradFn<T>>>,
+    grad_fn: Option<Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)>>,
     id: &'static str,
 }
 
@@ -31,7 +31,7 @@ where
         data: T,
         grad: T,
         op: Option<Op>,
-        grad_fn: Option<Box<dyn GradFn<T>>>,
+        grad_fn: Option<Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)>>,
         id: &'static str,
     ) -> Self {
         Self {
@@ -93,13 +93,16 @@ where
     // Outgrad is the already calculated gradient and the parent of an expression
     // do macro for these
     fn backward(&self) -> Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)> {
-        let op = |dag: &mut Dag<Value<T>, Empty>, parent_idx: NodeIndex| {
+        let op = |dag: &mut Dag<Value<T>, Empty>, out_idx: NodeIndex| {
             let out = dag
-                .node_weight(parent_idx)
+                .node_weight(out_idx)
                 .expect("Unable to borrow parent node");
 
             let out_grad = out.grad;
-            let out_op = out.op.expect("No Op on given parent index");
+
+            let out_op = out
+                .op
+                .expect("Function calling this should not allow nodes with no op");
 
             let dx = match out_op {
                 Op::ADD => |_: T, out: T, _: T| out,
@@ -111,30 +114,36 @@ where
                 Op::SUB => |_: T, out: T, _: T| -out,
             };
 
-            let mut child_indexes = dag.children(parent_idx);
+            // Daggy calls them parent because they are pointing to out
+            let mut input_idxs = dag.parents(out_idx);
 
-            let child_one = child_indexes.walk_next(dag).expect("Child Index is wrong");
-            let child_two = child_indexes.walk_next(dag).expect("Child index is wrong");
+            let input_one = input_idxs.walk_next(dag).expect("Didn't get input?");
+            let input_two = input_idxs.walk_next(dag);
+
+            let r_data: T;
 
             let l_data = dag
-                .node_weight(child_one.1)
+                .node_weight(input_one.1)
                 .expect("Unable to borrow node")
                 .data;
 
-            let r_data = dag
-                .node_weight(child_two.1)
-                .expect("Unable to borrow node")
-                .data;
+            if let Some(two) = input_two {
+                r_data = dag.node_weight(two.1).expect("Unable to borrow node").data;
+                let mut r = dag
+                    .node_weight_mut(two.1)
+                    .expect("Unable to mut borrow node");
+                r.grad = r.grad + dx(l_data, out_grad, l_data);
+                println!("{} Grad -> {}", r.id, r.grad);
+            } else {
+                r_data = T::from(0.0).expect("Unable to cast 0.0 to T");
+            }
 
             let mut l = dag
-                .node_weight_mut(child_one.1)
+                .node_weight_mut(input_one.1)
                 .expect("Unable to mut borrow node");
             l.grad = l.grad + dx(l_data, out_grad, r_data);
 
-            let mut r = dag
-                .node_weight_mut(child_two.1)
-                .expect("Unable to mut borrow node");
-            r.grad = r.grad + dx(l_data, out_grad, l_data);
+            println!("{} Grad -> {}", l.id, l.grad);
         };
 
         Box::new(op)
@@ -169,6 +178,23 @@ where
         self.graph.add_node(new_node)
     }
 
+    pub fn backward_one_level(&mut self, out: NodeIndex) {
+        let out_node = self.graph.node_weight(out).expect("Unable to borrow node");
+        if out_node.op.is_none() {
+            return;
+        }
+        let dx: Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)> =
+            out_node.op.expect("unable to borrow op").backward();
+        dx(&mut self.graph, out);
+    }
+
+    pub fn backward_full_pass(&mut self) {
+        for i in (0..self.graph.node_count()).rev() {
+            let out = NodeIndex::new(i);
+            self.backward_one_level(out);
+        }
+    }
+
     // Given the index of 1 or 2 operands (Value<T> Nodes) apply an operation on their data and
     // store the result as a new node in the graph. Where the children are the 2 operands and the
     // parent is the result. Return the NodeIndex of the newly created parent.
@@ -181,7 +207,7 @@ where
     ) -> NodeIndex {
         let l_n = &self.graph[lhs];
 
-        let node_result = match (op, rhs) {
+        let data = match (op, rhs) {
             (Op::ADD, Some(rhs)) => l_n.data + self.graph[rhs].data,
             (Op::MUL, Some(rhs)) => l_n.data * self.graph[rhs].data,
             (Op::SUB, Some(rhs)) => l_n.data - self.graph[rhs].data,
@@ -190,10 +216,15 @@ where
             _ => panic!("Number of operands doesn't match operation requirements"),
         };
 
-        // let backward: Box<dyn Fn(T, T, Option<T>) -> (T, Option<T>)> = op.backward();
+        // let out = Value::new_with_op(data, op, id);
+        let out = Value::with_all(
+            data,
+            data.abs() - data.abs(),
+            Some(op),
+            Some(op.backward()),
+            id,
+        );
 
-        let out = Value::new_with_op(node_result, op, id);
-        // let out = Value::with_all(node_result, )
         let out_idx = self.graph.add_node(out);
 
         self.graph
@@ -209,6 +240,14 @@ where
         out_idx
     }
 
+    pub fn set_node_grad(&mut self, node: NodeIndex, grad: T) {
+        let n = self
+            .graph
+            .node_weight_mut(node)
+            .expect("Unable to mut borrow node");
+        n.grad = grad;
+    }
+
     pub fn write_dag_to_dot(&self, filename: &'static str) {
         let mut file = File::create("input.dot").unwrap();
         let mut content = String::new();
@@ -220,7 +259,7 @@ where
         // Stored as: Node { weight, next: [outgoing, incoming]}
         // Node { weight: 0, next: [EdgeIndex(1), EdgeIndex(4294967295)] }
         // Write all the nodes and their labels (Operands and Operators)
-        for (index, node) in self.graph.raw_nodes().iter().enumerate() {
+        for (i, node) in self.graph.raw_nodes().iter().enumerate() {
             let data = format!("{:.4}", node.weight.data);
             let grad = format!("{:.4}", node.weight.grad);
             let label = node.weight.id;
@@ -228,7 +267,7 @@ where
             content.push('\n');
             content = format!(
                 r#"{}    {} [label="{{ {} | data: {} | grad: {} }}"]"#,
-                content, index, label, data, grad
+                content, i, label, data, grad
             );
 
             if let Some(op) = node.weight.op {
@@ -236,7 +275,7 @@ where
                 content = format!(
                     r#"{}    {}999 [label="{}" shape=circle]"#,
                     content,
-                    index,
+                    i,
                     op.as_str()
                 );
             }
@@ -246,8 +285,7 @@ where
 
         // Draw edges from operands to operators
         let mut already_pointed_sources = Vec::<usize>::new();
-        for (i, edge) in self.graph.raw_edges().iter().enumerate() {
-            let index = i.index();
+        for edge in self.graph.raw_edges() {
             let source = edge.source().index();
             let target = edge.target().index();
 
