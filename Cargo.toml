@@ -1,0 +1,17 @@
+[package]
+name = "micrograd-rs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "micrograd"
+path = "src/lib.rs"
+
+[[bin]]
+name = "mg"
+path = "src/bin.rs"
+
+[dependencies]
+daggy = "0.8.0"
+num-traits = "0.2.15"
+rand = "0.8.5"
