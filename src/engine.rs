@@ -1,6 +1,5 @@
-#![allow(dead_code)]
 #![allow(clippy::type_complexity)]
-use daggy::{petgraph::Direction, Dag, EdgeIndex, NodeIndex, Walker};
+use daggy::{Dag, NodeIndex, Walker};
 use num_traits::Float;
 use std::{fmt, fs::File, io::Write};
 
@@ -11,7 +10,6 @@ where
     data: T,
     grad: T,
     op: Option<Op>,
-    grad_fn: Option<Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)>>,
     id: &'static str,
 }
 
@@ -20,27 +18,11 @@ where
     T: Float + fmt::Display,
 {
     fn new(data: T, id: &'static str) -> Self {
-        Value::with_all(data, data.abs() - data.abs(), None, None, id)
+        Value::with_all(data, data.abs() - data.abs(), None, id)
     }
 
-    fn new_with_op(data: T, op: Op, id: &'static str) -> Self {
-        Value::with_all(data, data.abs() - data.abs(), Some(op), None, id)
-    }
-
-    fn with_all(
-        data: T,
-        grad: T,
-        op: Option<Op>,
-        grad_fn: Option<Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)>>,
-        id: &'static str,
-    ) -> Self {
-        Self {
-            data,
-            grad,
-            op,
-            grad_fn,
-            id,
-        }
+    fn with_all(data: T, grad: T, op: Option<Op>, id: &'static str) -> Self {
+        Self { data, grad, op, id }
     }
 }
 
@@ -217,13 +199,7 @@ where
         };
 
         // let out = Value::new_with_op(data, op, id);
-        let out = Value::with_all(
-            data,
-            data.abs() - data.abs(),
-            Some(op),
-            Some(op.backward()),
-            id,
-        );
+        let out = Value::with_all(data, data.abs() - data.abs(), Some(op), id);
 
         let out_idx = self.graph.add_node(out);
 
