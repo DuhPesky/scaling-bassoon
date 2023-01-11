@@ -1,8 +1,8 @@
-#![allow(unused_variables, dead_code)]
+#![allow(dead_code)]
 #![allow(clippy::type_complexity)]
 use daggy::{petgraph::graph::IndexType, Dag, NodeIndex, Walker};
 use num_traits::Float;
-use std::{fmt, fs::File, hint::unreachable_unchecked, io::Write};
+use std::{fmt, fs::File, io::Write};
 
 pub struct Value<T>
 where
@@ -57,7 +57,7 @@ where
     }
 }
 
-struct Empty;
+pub struct Empty;
 
 impl fmt::Display for Empty {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
@@ -93,30 +93,48 @@ where
     // Outgrad is the already calculated gradient and the parent of an expression
     // do macro for these
     fn backward(&self) -> Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)> {
-        let dx = match self {
-            Op::ADD => |self_: T, out: T, other: T| out,
-            Op::MUL => |self_: T, out: T , other: T| other * out,
-            Op::POW => |self_: T, out: T, other: T| (other * self_.powf(other - T::from(1.0).unwrap())) * out,
-            Op::TANH => |self_: T, out: T, other: T| out,
-            _ => unreachable!(),
-        };
-
         let op = |dag: &mut Dag<Value<T>, Empty>, parent_idx: NodeIndex| {
-            let zero = T::from(0.0).expect("Unable to cast 0.0 to T");
-            let parent = dag.node_weight(parent_idx).expect("Unable to borrow parent node");
-            let child_indexes = dag.children(parent_idx);
+            let out = dag
+                .node_weight(parent_idx)
+                .expect("Unable to borrow parent node");
 
-            let child_idx_one = child_indexes.walk_next(dag).expect("Child Index is wrong");
-            let child_idx_two = child_indexes.walk_next(dag).expect("Child index is wrong");
+            let out_grad = out.grad;
+            let out_op = out.op.expect("No Op on given parent index");
 
-            let l_node = dag.node_weight(child_idx_one.1).expect("Unable to borrow node");
-            let r_node = dag.node_weight(child_idx_two.1).expect("Unable to borrow node");
+            let dx = match out_op {
+                Op::ADD => |_: T, out: T, _: T| out,
+                Op::MUL => |_: T, out: T, other: T| other * out,
+                Op::POW => |self_: T, out: T, other: T| {
+                    (other * self_.powf(other - T::from(1.0).unwrap())) * out
+                },
+                Op::TANH => |_: T, out: T, _: T| out,
+                Op::SUB => |_: T, out: T, _: T| -out,
+            };
 
-            let mut lhs = dag.node_weight_mut(child_idx_one.1).expect("Unable to mut borrow node");
-            lhs.grad = lhs.grad + dx(l_node.data, parent.grad, r_node.data);
+            let mut child_indexes = dag.children(parent_idx);
 
-            let mut rhs = dag.node_weight_mut(child_idx_two.1).expect("Unable to mut borrow node");
-            rhs.grad = rhs.grad + dx(r_node.data, parent.grad, l_node.data);
+            let child_one = child_indexes.walk_next(dag).expect("Child Index is wrong");
+            let child_two = child_indexes.walk_next(dag).expect("Child index is wrong");
+
+            let l_data = dag
+                .node_weight(child_one.1)
+                .expect("Unable to borrow node")
+                .data;
+
+            let r_data = dag
+                .node_weight(child_two.1)
+                .expect("Unable to borrow node")
+                .data;
+
+            let mut l = dag
+                .node_weight_mut(child_one.1)
+                .expect("Unable to mut borrow node");
+            l.grad = l.grad + dx(l_data, out_grad, r_data);
+
+            let mut r = dag
+                .node_weight_mut(child_two.1)
+                .expect("Unable to mut borrow node");
+            r.grad = r.grad + dx(l_data, out_grad, l_data);
         };
 
         Box::new(op)
@@ -127,7 +145,6 @@ pub trait GradFn<T>
 where
     T: Float + fmt::Display,
 {
-    // fn backward(&self) -> Box<dyn Fn(T, T, Option<T>) -> (T, Option<T>)>;
     fn backward(&self) -> Box<dyn Fn(&mut Dag<Value<T>, Empty>, NodeIndex)>;
 }
 
