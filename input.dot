@@ -1,38 +1,25 @@
 digraph {
 rankdir="LR"
 node [shape=record]
-    0 [label="{ x1 | data: 2.0000 | grad: -1.5000 }"]
-    1 [label="{ x2 | data: 0.0000 | grad: 0.5000 }"]
-    2 [label="{ w1 | data: -3.0000 | grad: 1.0000 }"]
-    3 [label="{ w2 | data: 1.0000 | grad: 0.0000 }"]
-    4 [label="{ b | data: 6.8814 | grad: 0.5000 }"]
-    5 [label="{ x1*w1 | data: -6.0000 | grad: 0.5000 }"]
-    5999 [label="*" shape=circle]
-    6 [label="{ x2*w2 | data: 0.0000 | grad: 0.5000 }"]
-    6999 [label="*" shape=circle]
-    7 [label="{ x1*w1 + x2*w2 | data: -6.0000 | grad: 0.5000 }"]
-    7999 [label="+" shape=circle]
-    8 [label="{ n | data: 0.8814 | grad: 0.5000 }"]
-    8999 [label="+" shape=circle]
-    9 [label="{ o | data: 0.7071 | grad: 0.0000 }"]
-    9999 [label="tanh" shape=circle]
+    0 [label="{ a | data: -2.0000 | grad: -3.0000 }"]
+    1 [label="{ b | data: 3.0000 | grad: -8.0000 }"]
+    2 [label="{ d | data: -6.0000 | grad: 1.0000 }"]
+    2999 [label="*" shape=circle]
+    3 [label="{ e | data: 1.0000 | grad: -6.0000 }"]
+    3999 [label="+" shape=circle]
+    4 [label="{ f | data: -6.0000 | grad: 1.0000 }"]
+    4999 [label="*" shape=circle]
 
-    0 -> 5999
-    5999 -> 5
-    2 -> 5999
+    0 -> 2999
+    2999 -> 2
+    1 -> 2999
 
-    1 -> 6999
-    6999 -> 6
-    3 -> 6999
+    0 -> 3999
+    3999 -> 3
+    1 -> 3999
 
-    5 -> 7999
-    7999 -> 7
-    6 -> 7999
+    2 -> 4999
+    4999 -> 4
+    3 -> 4999
 
-    7 -> 8999
-    8999 -> 8
-    4 -> 8999
-
-    8 -> 9999
-    9999 -> 9
 }

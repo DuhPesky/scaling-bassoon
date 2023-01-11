@@ -1,5 +1,5 @@
 #![allow(clippy::type_complexity)]
-use daggy::{Dag, NodeIndex, Walker};
+use daggy::{petgraph::Direction, Dag, EdgeIndex, NodeIndex, Walker};
 use num_traits::Float;
 use std::{fmt, fs::File, io::Write};
 
@@ -17,11 +17,7 @@ impl<T> Value<T>
 where
     T: Float + fmt::Display,
 {
-    fn new(data: T, id: &'static str) -> Self {
-        Value::with_all(data, data.abs() - data.abs(), None, id)
-    }
-
-    fn with_all(data: T, grad: T, op: Option<Op>, id: &'static str) -> Self {
+    fn new(data: T, grad: T, op: Option<Op>, id: &'static str) -> Self {
         Self { data, grad, op, id }
     }
 }
@@ -81,6 +77,7 @@ where
                 .expect("Unable to borrow parent node");
 
             let out_grad = out.grad;
+            println!("{} grad: {}", out.id, out_grad);
 
             let out_op = out
                 .op
@@ -156,11 +153,13 @@ where
 
     // Adds a scalar node to the DAG and returns its NodeIndex
     pub fn new_value(&mut self, data: T, id: &'static str) -> NodeIndex {
-        let new_node = Value::new(data, id);
+        let grad = T::from(0.0).expect("Unable to cast 0.0 to T");
+        let new_node = Value::new(data, grad, None, id);
         self.graph.add_node(new_node)
     }
 
     pub fn backward_one_level(&mut self, out: NodeIndex) {
+        self.set_rootgrad_to_one();
         let out_node = self.graph.node_weight(out).expect("Unable to borrow node");
         if out_node.op.is_none() {
             return;
@@ -170,7 +169,21 @@ where
         dx(&mut self.graph, out);
     }
 
+    fn set_rootgrad_to_one(&mut self) {
+        let mut root: NodeIndex<u32> = NodeIndex::new(0);
+
+        for (i, node) in self.graph.raw_nodes().iter().enumerate() {
+            if node.next_edge(Direction::Outgoing) == EdgeIndex::end() {
+                root = NodeIndex::new(i);
+                break;
+            }
+        }
+
+        self.graph.node_weight_mut(root).unwrap().grad = T::from(1.0).unwrap();
+    }
+
     pub fn backward_full_pass(&mut self) {
+        self.set_rootgrad_to_one();
         for i in (0..self.graph.node_count()).rev() {
             let out = NodeIndex::new(i);
             self.backward_one_level(out);
@@ -199,7 +212,7 @@ where
         };
 
         // let out = Value::new_with_op(data, op, id);
-        let out = Value::with_all(data, data.abs() - data.abs(), Some(op), id);
+        let out = Value::new(data, data.abs() - data.abs(), Some(op), id);
 
         let out_idx = self.graph.add_node(out);
 
