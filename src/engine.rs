@@ -240,6 +240,10 @@ where
         n.grad = grad;
     }
 
+    pub fn get_node_data(&self, node: NodeIndex) -> T {
+        self.graph[node].data
+    }
+
     pub fn write_dag_to_dot(&self, filename: &'static str) {
         let mut file = File::create("input.dot").unwrap();
         let mut content = String::new();
