@@ -1,2 +1,2 @@
 pub mod engine;
-mod nn;
+pub mod nn;
