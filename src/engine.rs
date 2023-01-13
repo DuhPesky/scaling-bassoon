@@ -114,7 +114,7 @@ where
                     .expect("Unable to mut borrow node");
 
                 r.grad = r.grad + dx(l_data, out_grad, l_data);
-                println!("{} Grad -> {}", r.id, r.grad);
+                // println!("{} Grad -> {}", r.id, r.grad);
             } else {
                 r_data = T::zero();
             }
@@ -124,7 +124,7 @@ where
                 .expect("Unable to mut borrow node");
 
             l.grad = l.grad + dx(l_data, out_grad, r_data);
-            println!("{} Grad -> {}", l.id, l.grad);
+            // println!("{} Grad -> {}", l.id, l.grad);
         };
 
         Box::new(op)
@@ -158,6 +158,37 @@ where
         let grad = T::zero();
         let new_node = Value::new(data, grad, None, id);
         self.graph.add_node(new_node)
+    }
+
+    pub fn loss_computation(&mut self, pred: &[NodeIndex], truth: &[f64]) -> NodeIndex {
+        let mut result = self.new_value(T::zero(), "result");
+
+        for (y_truth, ypred) in truth.iter().zip(pred.iter()) {
+            let y_truth = self.new_value(T::from(*y_truth).unwrap(), "y");
+
+            let error = self.new_computation(y_truth, Some(*ypred), Op::SUB, "E");
+
+            let two = self.new_value(T::from(2.0).unwrap(), "2");
+            let sq_error = self.new_computation(error, Some(two), Op::POW, "SE");
+
+            result = self.new_computation(sq_error, Some(result), Op::ADD, "L");
+
+            println!(
+                "(y_truth - y_pred)^2 = ({} - {})^2 = {}",
+                self.get_node_data(y_truth),
+                self.get_node_data(*ypred),
+                self.get_node_data(sq_error)
+            );
+        }
+
+        result
+    }
+
+    pub fn gradient_descent_step(&mut self, params: &[NodeIndex]) {
+        for param in params.iter() {
+            let mut param_node = self.graph.node_weight_mut(*param).unwrap();
+            param_node.data = param_node.data + (param_node.grad * T::from(-0.05).unwrap());
+        }
     }
 
     pub fn backward_one_level(&mut self, out: NodeIndex) {

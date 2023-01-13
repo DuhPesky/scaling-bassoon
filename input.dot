@@ -1,223 +1,784 @@
 digraph {
 rankdir="LR"
 node [shape=record]
-    0 [label="{ w | data: 0.0410 | grad: 0.0000 }"]
-    1 [label="{ w | data: 0.2447 | grad: 0.0000 }"]
-    2 [label="{ w | data: -0.3169 | grad: 0.0000 }"]
-    3 [label="{ b | data: -0.3136 | grad: 0.0000 }"]
-    4 [label="{ w | data: 0.6416 | grad: 0.0000 }"]
-    5 [label="{ w | data: 0.2322 | grad: 0.0000 }"]
-    6 [label="{ w | data: 0.4203 | grad: 0.0000 }"]
-    7 [label="{ b | data: 0.7840 | grad: 0.0000 }"]
-    8 [label="{ w | data: -0.9880 | grad: 0.0000 }"]
-    9 [label="{ w | data: -0.7891 | grad: 0.0000 }"]
-    10 [label="{ w | data: -0.0482 | grad: 0.0000 }"]
-    11 [label="{ b | data: -0.0425 | grad: 0.0000 }"]
-    12 [label="{ w | data: 0.8959 | grad: 0.0000 }"]
-    13 [label="{ w | data: 0.0870 | grad: 0.0000 }"]
-    14 [label="{ w | data: 0.1534 | grad: 0.0000 }"]
-    15 [label="{ b | data: -0.4458 | grad: 0.0000 }"]
-    16 [label="{ w | data: 0.9951 | grad: 0.0000 }"]
-    17 [label="{ w | data: 0.2852 | grad: 0.0000 }"]
-    18 [label="{ w | data: -0.1057 | grad: 0.0000 }"]
-    19 [label="{ w | data: -0.6838 | grad: 0.0000 }"]
-    20 [label="{ b | data: -0.5094 | grad: 0.0000 }"]
-    21 [label="{ w | data: 0.1656 | grad: 0.0000 }"]
-    22 [label="{ w | data: 0.1635 | grad: 0.0000 }"]
-    23 [label="{ w | data: 0.6031 | grad: 0.0000 }"]
-    24 [label="{ w | data: -0.6487 | grad: 0.0000 }"]
-    25 [label="{ b | data: -0.6131 | grad: 0.0000 }"]
-    26 [label="{ w | data: 0.2857 | grad: 0.0000 }"]
-    27 [label="{ w | data: 0.5968 | grad: 0.0000 }"]
-    28 [label="{ w | data: 0.0057 | grad: 0.0000 }"]
-    29 [label="{ w | data: -0.7992 | grad: 0.0000 }"]
-    30 [label="{ b | data: 0.2903 | grad: 0.0000 }"]
-    31 [label="{ w | data: 0.3766 | grad: 0.0000 }"]
-    32 [label="{ w | data: -0.4901 | grad: 0.0000 }"]
-    33 [label="{ w | data: 0.9353 | grad: 0.0000 }"]
-    34 [label="{ w | data: 0.1608 | grad: 0.0000 }"]
-    35 [label="{ b | data: 0.5646 | grad: 0.0000 }"]
-    36 [label="{ w | data: 0.9330 | grad: 0.0000 }"]
-    37 [label="{ w | data: 0.9819 | grad: 0.0000 }"]
-    38 [label="{ w | data: -0.7397 | grad: 0.0000 }"]
-    39 [label="{ w | data: 0.0891 | grad: 0.0000 }"]
-    40 [label="{ b | data: -0.5279 | grad: 0.0000 }"]
-    41 [label="{ x | data: 2.0000 | grad: 0.0000 }"]
-    42 [label="{ x | data: 3.0000 | grad: 0.0000 }"]
-    43 [label="{ x | data: -1.0000 | grad: 0.0000 }"]
-    44 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    45 [label="{ xi*wi | data: 0.0820 | grad: 0.0000 }"]
+    0 [label="{ w | data: 2.1032 | grad: -33.1446 }"]
+    1 [label="{ w | data: 0.6575 | grad: -20.3967 }"]
+    2 [label="{ w | data: -0.9131 | grad: 2.5496 }"]
+    3 [label="{ b | data: 1.7405 | grad: -20.3967 }"]
+    4 [label="{ w | data: -0.5415 | grad: 5.8213 }"]
+    5 [label="{ w | data: -0.3269 | grad: 3.5824 }"]
+    6 [label="{ w | data: 0.0545 | grad: -0.4478 }"]
+    7 [label="{ b | data: 0.4326 | grad: 3.5824 }"]
+    8 [label="{ w | data: 0.0849 | grad: 11.9028 }"]
+    9 [label="{ w | data: -1.1215 | grad: 7.3248 }"]
+    10 [label="{ w | data: 0.4293 | grad: -0.9156 }"]
+    11 [label="{ b | data: -0.5742 | grad: 7.3248 }"]
+    12 [label="{ w | data: -1.2839 | grad: 11.7489 }"]
+    13 [label="{ w | data: -0.0835 | grad: 7.2301 }"]
+    14 [label="{ w | data: 0.9290 | grad: -0.9038 }"]
+    15 [label="{ b | data: -0.3913 | grad: 7.2301 }"]
+    16 [label="{ w | data: 1.1474 | grad: -3.9889 }"]
+    17 [label="{ w | data: -0.0575 | grad: -0.3269 }"]
+    18 [label="{ w | data: 0.6417 | grad: 1.1426 }"]
+    19 [label="{ w | data: 0.5418 | grad: 3.2480 }"]
+    20 [label="{ b | data: 0.9316 | grad: -6.2590 }"]
+    21 [label="{ w | data: 1.3878 | grad: -10.0198 }"]
+    22 [label="{ w | data: -0.4885 | grad: -0.8213 }"]
+    23 [label="{ w | data: -0.5968 | grad: 2.8702 }"]
+    24 [label="{ w | data: -1.3253 | grad: 8.1588 }"]
+    25 [label="{ b | data: -0.0657 | grad: -15.7222 }"]
+    26 [label="{ w | data: 0.1775 | grad: -6.2583 }"]
+    27 [label="{ w | data: 0.9137 | grad: -0.5130 }"]
+    28 [label="{ w | data: -0.8008 | grad: 1.7927 }"]
+    29 [label="{ w | data: 0.3949 | grad: 5.0960 }"]
+    30 [label="{ b | data: 1.4048 | grad: -9.8201 }"]
+    31 [label="{ w | data: 0.5012 | grad: -6.2487 }"]
+    32 [label="{ w | data: -0.3329 | grad: -0.5122 }"]
+    33 [label="{ w | data: 0.1565 | grad: 1.7900 }"]
+    34 [label="{ w | data: -0.6210 | grad: 5.0881 }"]
+    35 [label="{ b | data: 0.2124 | grad: -9.8050 }"]
+    36 [label="{ w | data: 0.8193 | grad: -8.5632 }"]
+    37 [label="{ w | data: 1.1956 | grad: -4.2589 }"]
+    38 [label="{ w | data: 0.9396 | grad: -6.5174 }"]
+    39 [label="{ w | data: 0.6029 | grad: 0.1975 }"]
+    40 [label="{ b | data: 0.8514 | grad: -16.0000 }"]
+    41 [label="{ x | data: 2.0000 | grad: -2.5122 }"]
+    42 [label="{ x | data: 3.0000 | grad: 0.8349 }"]
+    43 [label="{ x | data: -1.0000 | grad: 6.3345 }"]
+    44 [label="{  | data: 0.0000 | grad: -5.0992 }"]
+    45 [label="{ xi*wi | data: 0.8920 | grad: -5.0992 }"]
     45999 [label="*" shape=circle]
-    46 [label="{  | data: 0.0820 | grad: 0.0000 }"]
+    46 [label="{  | data: 0.8920 | grad: -5.0992 }"]
     46999 [label="+" shape=circle]
-    47 [label="{ xi*wi | data: 0.7342 | grad: 0.0000 }"]
+    47 [label="{ xi*wi | data: -1.0871 | grad: -5.0992 }"]
     47999 [label="*" shape=circle]
-    48 [label="{  | data: 0.8162 | grad: 0.0000 }"]
+    48 [label="{  | data: -0.1951 | grad: -5.0992 }"]
     48999 [label="+" shape=circle]
-    49 [label="{ xi*wi | data: 0.3169 | grad: 0.0000 }"]
+    49 [label="{ xi*wi | data: 0.7856 | grad: -5.0992 }"]
     49999 [label="*" shape=circle]
-    50 [label="{  | data: 1.1331 | grad: 0.0000 }"]
+    50 [label="{  | data: 0.5905 | grad: -5.0992 }"]
     50999 [label="+" shape=circle]
-    51 [label="{ xw+b | data: 0.8195 | grad: 0.0000 }"]
+    51 [label="{ xw+b | data: 1.3112 | grad: -5.0992 }"]
     51999 [label="+" shape=circle]
-    52 [label="{  | data: 0.6748 | grad: 0.0000 }"]
+    52 [label="{  | data: 0.8646 | grad: -5.0992 }"]
     52999 [label="tanh" shape=circle]
-    53 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    54 [label="{ xi*wi | data: 1.2832 | grad: 0.0000 }"]
+    53 [label="{  | data: 0.0000 | grad: 0.8956 }"]
+    54 [label="{ xi*wi | data: -0.5010 | grad: 0.8956 }"]
     54999 [label="*" shape=circle]
-    55 [label="{  | data: 1.2832 | grad: 0.0000 }"]
+    55 [label="{  | data: -0.5010 | grad: 0.8956 }"]
     55999 [label="+" shape=circle]
-    56 [label="{ xi*wi | data: 0.6965 | grad: 0.0000 }"]
+    56 [label="{ xi*wi | data: -0.4433 | grad: 0.8956 }"]
     56999 [label="*" shape=circle]
-    57 [label="{  | data: 1.9797 | grad: 0.0000 }"]
+    57 [label="{  | data: -0.9442 | grad: 0.8956 }"]
     57999 [label="+" shape=circle]
-    58 [label="{ xi*wi | data: -0.4203 | grad: 0.0000 }"]
+    58 [label="{ xi*wi | data: -0.0321 | grad: 0.8956 }"]
     58999 [label="*" shape=circle]
-    59 [label="{  | data: 1.5594 | grad: 0.0000 }"]
+    59 [label="{  | data: -0.9764 | grad: 0.8956 }"]
     59999 [label="+" shape=circle]
-    60 [label="{ xw+b | data: 2.3433 | grad: 0.0000 }"]
+    60 [label="{ xw+b | data: -0.3646 | grad: 0.8956 }"]
     60999 [label="+" shape=circle]
-    61 [label="{  | data: 0.9817 | grad: 0.0000 }"]
+    61 [label="{  | data: -0.3493 | grad: 0.8956 }"]
     61999 [label="tanh" shape=circle]
-    62 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    63 [label="{ xi*wi | data: -1.9761 | grad: 0.0000 }"]
+    62 [label="{  | data: 0.0000 | grad: 1.8312 }"]
+    63 [label="{ xi*wi | data: 1.3601 | grad: 1.8312 }"]
     63999 [label="*" shape=circle]
-    64 [label="{  | data: -1.9761 | grad: 0.0000 }"]
+    64 [label="{  | data: 1.3601 | grad: 1.8312 }"]
     64999 [label="+" shape=circle]
-    65 [label="{ xi*wi | data: -2.3672 | grad: 0.0000 }"]
+    65 [label="{ xi*wi | data: -2.2658 | grad: 1.8312 }"]
     65999 [label="*" shape=circle]
-    66 [label="{  | data: -4.3433 | grad: 0.0000 }"]
+    66 [label="{  | data: -0.9057 | grad: 1.8312 }"]
     66999 [label="+" shape=circle]
-    67 [label="{ xi*wi | data: 0.0482 | grad: 0.0000 }"]
+    67 [label="{ xi*wi | data: -0.3835 | grad: 1.8312 }"]
     67999 [label="*" shape=circle]
-    68 [label="{  | data: -4.2951 | grad: 0.0000 }"]
+    68 [label="{  | data: -1.2892 | grad: 1.8312 }"]
     68999 [label="+" shape=circle]
-    69 [label="{ xw+b | data: -4.3376 | grad: 0.0000 }"]
+    69 [label="{ xw+b | data: -1.4971 | grad: 1.8312 }"]
     69999 [label="+" shape=circle]
-    70 [label="{  | data: -0.9997 | grad: 0.0000 }"]
+    70 [label="{  | data: -0.9046 | grad: 1.8312 }"]
     70999 [label="tanh" shape=circle]
-    71 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    72 [label="{ xi*wi | data: 1.7919 | grad: 0.0000 }"]
+    71 [label="{  | data: 0.0000 | grad: 1.8075 }"]
+    72 [label="{ xi*wi | data: -1.3930 | grad: 1.8075 }"]
     72999 [label="*" shape=circle]
-    73 [label="{  | data: 1.7919 | grad: 0.0000 }"]
+    73 [label="{  | data: -1.3930 | grad: 1.8075 }"]
     73999 [label="+" shape=circle]
-    74 [label="{ xi*wi | data: 0.2610 | grad: 0.0000 }"]
+    74 [label="{ xi*wi | data: 0.8340 | grad: 1.8075 }"]
     74999 [label="*" shape=circle]
-    75 [label="{  | data: 2.0529 | grad: 0.0000 }"]
+    75 [label="{  | data: -0.5590 | grad: 1.8075 }"]
     75999 [label="+" shape=circle]
-    76 [label="{ xi*wi | data: -0.1534 | grad: 0.0000 }"]
+    76 [label="{ xi*wi | data: -0.8838 | grad: 1.8075 }"]
     76999 [label="*" shape=circle]
-    77 [label="{  | data: 1.8995 | grad: 0.0000 }"]
+    77 [label="{  | data: -1.4428 | grad: 1.8075 }"]
     77999 [label="+" shape=circle]
-    78 [label="{ xw+b | data: 1.4537 | grad: 0.0000 }"]
+    78 [label="{ xw+b | data: -1.4726 | grad: 1.8075 }"]
     78999 [label="+" shape=circle]
-    79 [label="{  | data: 0.8964 | grad: 0.0000 }"]
+    79 [label="{  | data: -0.9001 | grad: 1.8075 }"]
     79999 [label="tanh" shape=circle]
-    80 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    81 [label="{ xi*wi | data: 0.6715 | grad: 0.0000 }"]
+    80 [label="{  | data: 0.0000 | grad: -1.5648 }"]
+    81 [label="{ xi*wi | data: 0.8196 | grad: -1.5648 }"]
     81999 [label="*" shape=circle]
-    82 [label="{  | data: 0.6715 | grad: 0.0000 }"]
+    82 [label="{  | data: 0.8196 | grad: -1.5648 }"]
     82999 [label="+" shape=circle]
-    83 [label="{ xi*wi | data: 0.2800 | grad: 0.0000 }"]
+    83 [label="{ xi*wi | data: 0.0258 | grad: -1.5648 }"]
     83999 [label="*" shape=circle]
-    84 [label="{  | data: 0.9515 | grad: 0.0000 }"]
+    84 [label="{  | data: 0.8454 | grad: -1.5648 }"]
     84999 [label="+" shape=circle]
-    85 [label="{ xi*wi | data: 0.1057 | grad: 0.0000 }"]
+    85 [label="{ xi*wi | data: -0.6322 | grad: -1.5648 }"]
     85999 [label="*" shape=circle]
-    86 [label="{  | data: 1.0571 | grad: 0.0000 }"]
+    86 [label="{  | data: 0.2133 | grad: -1.5648 }"]
     86999 [label="+" shape=circle]
-    87 [label="{ xi*wi | data: -0.6130 | grad: 0.0000 }"]
+    87 [label="{ xi*wi | data: -0.6339 | grad: -1.5648 }"]
     87999 [label="*" shape=circle]
-    88 [label="{  | data: 0.4442 | grad: 0.0000 }"]
+    88 [label="{  | data: -0.4206 | grad: -1.5648 }"]
     88999 [label="+" shape=circle]
-    89 [label="{ xw+b | data: -0.0652 | grad: 0.0000 }"]
+    89 [label="{ xw+b | data: 0.1980 | grad: -1.5648 }"]
     89999 [label="+" shape=circle]
-    90 [label="{  | data: -0.0651 | grad: 0.0000 }"]
+    90 [label="{  | data: 0.1955 | grad: -1.5648 }"]
     90999 [label="tanh" shape=circle]
-    91 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    92 [label="{ xi*wi | data: 0.1117 | grad: 0.0000 }"]
+    91 [label="{  | data: 0.0000 | grad: -3.9306 }"]
+    92 [label="{ xi*wi | data: 0.7667 | grad: -3.9306 }"]
     92999 [label="*" shape=circle]
-    93 [label="{  | data: 0.1117 | grad: 0.0000 }"]
+    93 [label="{  | data: 0.7667 | grad: -3.9306 }"]
     93999 [label="+" shape=circle]
-    94 [label="{ xi*wi | data: 0.1605 | grad: 0.0000 }"]
+    94 [label="{ xi*wi | data: 0.1850 | grad: -3.9306 }"]
     94999 [label="*" shape=circle]
-    95 [label="{  | data: 0.2723 | grad: 0.0000 }"]
+    95 [label="{  | data: 0.9517 | grad: -3.9306 }"]
     95999 [label="+" shape=circle]
-    96 [label="{ xi*wi | data: -0.6029 | grad: 0.0000 }"]
+    96 [label="{ xi*wi | data: 0.4101 | grad: -3.9306 }"]
     96999 [label="*" shape=circle]
-    97 [label="{  | data: -0.3307 | grad: 0.0000 }"]
+    97 [label="{  | data: 1.3618 | grad: -3.9306 }"]
     97999 [label="+" shape=circle]
-    98 [label="{ xi*wi | data: -0.5815 | grad: 0.0000 }"]
+    98 [label="{ xi*wi | data: 0.8257 | grad: -3.9306 }"]
     98999 [label="*" shape=circle]
-    99 [label="{  | data: -0.9122 | grad: 0.0000 }"]
+    99 [label="{  | data: 2.1875 | grad: -3.9306 }"]
     99999 [label="+" shape=circle]
-    100 [label="{ xw+b | data: -1.5253 | grad: 0.0000 }"]
+    100 [label="{ xw+b | data: 1.3356 | grad: -3.9306 }"]
     100999 [label="+" shape=circle]
-    101 [label="{  | data: -0.9096 | grad: 0.0000 }"]
+    101 [label="{  | data: 0.8706 | grad: -3.9306 }"]
     101999 [label="tanh" shape=circle]
-    102 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    103 [label="{ xi*wi | data: 0.1928 | grad: 0.0000 }"]
+    102 [label="{  | data: 0.0000 | grad: -2.4550 }"]
+    103 [label="{ xi*wi | data: -0.1170 | grad: -2.4550 }"]
     103999 [label="*" shape=circle]
-    104 [label="{  | data: 0.1928 | grad: 0.0000 }"]
+    104 [label="{  | data: -0.1170 | grad: -2.4550 }"]
     104999 [label="+" shape=circle]
-    105 [label="{ xi*wi | data: 0.5859 | grad: 0.0000 }"]
+    105 [label="{ xi*wi | data: -0.3102 | grad: -2.4550 }"]
     105999 [label="*" shape=circle]
-    106 [label="{  | data: 0.7787 | grad: 0.0000 }"]
+    106 [label="{  | data: -0.4272 | grad: -2.4550 }"]
     106999 [label="+" shape=circle]
-    107 [label="{ xi*wi | data: -0.0057 | grad: 0.0000 }"]
+    107 [label="{ xi*wi | data: 0.6433 | grad: -2.4550 }"]
     107999 [label="*" shape=circle]
-    108 [label="{  | data: 0.7730 | grad: 0.0000 }"]
+    108 [label="{  | data: 0.2161 | grad: -2.4550 }"]
     108999 [label="+" shape=circle]
-    109 [label="{ xi*wi | data: -0.7164 | grad: 0.0000 }"]
+    109 [label="{ xi*wi | data: -0.5848 | grad: -2.4550 }"]
     109999 [label="*" shape=circle]
-    110 [label="{  | data: 0.0566 | grad: 0.0000 }"]
+    110 [label="{  | data: -0.3687 | grad: -2.4550 }"]
     110999 [label="+" shape=circle]
-    111 [label="{ xw+b | data: 0.3469 | grad: 0.0000 }"]
+    111 [label="{ xw+b | data: 0.5451 | grad: -2.4550 }"]
     111999 [label="+" shape=circle]
-    112 [label="{  | data: 0.3336 | grad: 0.0000 }"]
+    112 [label="{  | data: 0.4968 | grad: -2.4550 }"]
     112999 [label="tanh" shape=circle]
-    113 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    114 [label="{ xi*wi | data: 0.2542 | grad: 0.0000 }"]
+    113 [label="{  | data: 0.0000 | grad: -2.4512 }"]
+    114 [label="{ xi*wi | data: 0.1632 | grad: -2.4512 }"]
     114999 [label="*" shape=circle]
-    115 [label="{  | data: 0.2542 | grad: 0.0000 }"]
+    115 [label="{  | data: 0.1632 | grad: -2.4512 }"]
     115999 [label="+" shape=circle]
-    116 [label="{ xi*wi | data: -0.4811 | grad: 0.0000 }"]
+    116 [label="{ xi*wi | data: 0.1252 | grad: -2.4512 }"]
     116999 [label="*" shape=circle]
-    117 [label="{  | data: -0.2270 | grad: 0.0000 }"]
+    117 [label="{  | data: 0.2884 | grad: -2.4512 }"]
     117999 [label="+" shape=circle]
-    118 [label="{ xi*wi | data: -0.9350 | grad: 0.0000 }"]
+    118 [label="{ xi*wi | data: -0.2225 | grad: -2.4512 }"]
     118999 [label="*" shape=circle]
-    119 [label="{  | data: -1.1619 | grad: 0.0000 }"]
+    119 [label="{  | data: 0.0658 | grad: -2.4512 }"]
     119999 [label="+" shape=circle]
-    120 [label="{ xi*wi | data: 0.1441 | grad: 0.0000 }"]
+    120 [label="{ xi*wi | data: 0.3300 | grad: -2.4512 }"]
     120999 [label="*" shape=circle]
-    121 [label="{  | data: -1.0178 | grad: 0.0000 }"]
+    121 [label="{  | data: 0.3958 | grad: -2.4512 }"]
     121999 [label="+" shape=circle]
-    122 [label="{ xw+b | data: -0.4532 | grad: 0.0000 }"]
+    122 [label="{ xw+b | data: 0.1180 | grad: -2.4512 }"]
     122999 [label="+" shape=circle]
-    123 [label="{  | data: -0.4245 | grad: 0.0000 }"]
+    123 [label="{  | data: 0.1174 | grad: -2.4512 }"]
     123999 [label="tanh" shape=circle]
-    124 [label="{  | data: 0.0000 | grad: 0.0000 }"]
-    125 [label="{ xi*wi | data: -0.0608 | grad: 0.0000 }"]
+    124 [label="{  | data: 0.0000 | grad: -4.0000 }"]
+    125 [label="{ xi*wi | data: 0.0765 | grad: -4.0000 }"]
     125999 [label="*" shape=circle]
-    126 [label="{  | data: -0.0608 | grad: 0.0000 }"]
+    126 [label="{  | data: 0.0765 | grad: -4.0000 }"]
     126999 [label="+" shape=circle]
-    127 [label="{ xi*wi | data: -0.8931 | grad: 0.0000 }"]
+    127 [label="{ xi*wi | data: 0.8555 | grad: -4.0000 }"]
     127999 [label="*" shape=circle]
-    128 [label="{  | data: -0.9539 | grad: 0.0000 }"]
+    128 [label="{  | data: 0.9320 | grad: -4.0000 }"]
     128999 [label="+" shape=circle]
-    129 [label="{ xi*wi | data: -0.2468 | grad: 0.0000 }"]
+    129 [label="{ xi*wi | data: 0.3049 | grad: -4.0000 }"]
     129999 [label="*" shape=circle]
-    130 [label="{  | data: -1.2007 | grad: 0.0000 }"]
+    130 [label="{  | data: 1.2369 | grad: -4.0000 }"]
     130999 [label="+" shape=circle]
-    131 [label="{ xi*wi | data: -0.0378 | grad: 0.0000 }"]
+    131 [label="{ xi*wi | data: 0.0720 | grad: -4.0000 }"]
     131999 [label="*" shape=circle]
-    132 [label="{  | data: -1.2385 | grad: 0.0000 }"]
+    132 [label="{  | data: 1.3089 | grad: -4.0000 }"]
     132999 [label="+" shape=circle]
-    133 [label="{ xw+b | data: -1.7665 | grad: 0.0000 }"]
+    133 [label="{ xw+b | data: 1.3602 | grad: -4.0000 }"]
     133999 [label="+" shape=circle]
-    134 [label="{  | data: -0.9432 | grad: 0.0000 }"]
+    134 [label="{  | data: 0.8764 | grad: -4.0000 }"]
     134999 [label="tanh" shape=circle]
+    135 [label="{ x | data: 3.0000 | grad: -2.5122 }"]
+    136 [label="{ x | data: -1.0000 | grad: 0.8349 }"]
+    137 [label="{ x | data: 0.5000 | grad: 6.3345 }"]
+    138 [label="{  | data: 0.0000 | grad: -5.0992 }"]
+    139 [label="{ xi*wi | data: 1.3380 | grad: -5.0992 }"]
+    139999 [label="*" shape=circle]
+    140 [label="{  | data: 1.3380 | grad: -5.0992 }"]
+    140999 [label="+" shape=circle]
+    141 [label="{ xi*wi | data: 0.3624 | grad: -5.0992 }"]
+    141999 [label="*" shape=circle]
+    142 [label="{  | data: 1.7004 | grad: -5.0992 }"]
+    142999 [label="+" shape=circle]
+    143 [label="{ xi*wi | data: -0.3928 | grad: -5.0992 }"]
+    143999 [label="*" shape=circle]
+    144 [label="{  | data: 1.3076 | grad: -5.0992 }"]
+    144999 [label="+" shape=circle]
+    145 [label="{ xw+b | data: 2.0282 | grad: -5.0992 }"]
+    145999 [label="+" shape=circle]
+    146 [label="{  | data: 0.9660 | grad: -5.0992 }"]
+    146999 [label="tanh" shape=circle]
+    147 [label="{  | data: 0.0000 | grad: 0.8956 }"]
+    148 [label="{ xi*wi | data: -0.7514 | grad: 0.8956 }"]
+    148999 [label="*" shape=circle]
+    149 [label="{  | data: -0.7514 | grad: 0.8956 }"]
+    149999 [label="+" shape=circle]
+    150 [label="{ xi*wi | data: 0.1478 | grad: 0.8956 }"]
+    150999 [label="*" shape=circle]
+    151 [label="{  | data: -0.6037 | grad: 0.8956 }"]
+    151999 [label="+" shape=circle]
+    152 [label="{ xi*wi | data: 0.0161 | grad: 0.8956 }"]
+    152999 [label="*" shape=circle]
+    153 [label="{  | data: -0.5876 | grad: 0.8956 }"]
+    153999 [label="+" shape=circle]
+    154 [label="{ xw+b | data: 0.0241 | grad: 0.8956 }"]
+    154999 [label="+" shape=circle]
+    155 [label="{  | data: 0.0241 | grad: 0.8956 }"]
+    155999 [label="tanh" shape=circle]
+    156 [label="{  | data: 0.0000 | grad: 1.8312 }"]
+    157 [label="{ xi*wi | data: 2.0401 | grad: 1.8312 }"]
+    157999 [label="*" shape=circle]
+    158 [label="{  | data: 2.0401 | grad: 1.8312 }"]
+    158999 [label="+" shape=circle]
+    159 [label="{ xi*wi | data: 0.7553 | grad: 1.8312 }"]
+    159999 [label="*" shape=circle]
+    160 [label="{  | data: 2.7954 | grad: 1.8312 }"]
+    160999 [label="+" shape=circle]
+    161 [label="{ xi*wi | data: 0.1918 | grad: 1.8312 }"]
+    161999 [label="*" shape=circle]
+    162 [label="{  | data: 2.9871 | grad: 1.8312 }"]
+    162999 [label="+" shape=circle]
+    163 [label="{ xw+b | data: 2.7792 | grad: 1.8312 }"]
+    163999 [label="+" shape=circle]
+    164 [label="{  | data: 0.9923 | grad: 1.8312 }"]
+    164999 [label="tanh" shape=circle]
+    165 [label="{  | data: 0.0000 | grad: 1.8075 }"]
+    166 [label="{ xi*wi | data: -2.0895 | grad: 1.8075 }"]
+    166999 [label="*" shape=circle]
+    167 [label="{  | data: -2.0895 | grad: 1.8075 }"]
+    167999 [label="+" shape=circle]
+    168 [label="{ xi*wi | data: -0.2780 | grad: 1.8075 }"]
+    168999 [label="*" shape=circle]
+    169 [label="{  | data: -2.3675 | grad: 1.8075 }"]
+    169999 [label="+" shape=circle]
+    170 [label="{ xi*wi | data: 0.4419 | grad: 1.8075 }"]
+    170999 [label="*" shape=circle]
+    171 [label="{  | data: -1.9255 | grad: 1.8075 }"]
+    171999 [label="+" shape=circle]
+    172 [label="{ xw+b | data: -1.9554 | grad: 1.8075 }"]
+    172999 [label="+" shape=circle]
+    173 [label="{  | data: -0.9607 | grad: 1.8075 }"]
+    173999 [label="tanh" shape=circle]
+    174 [label="{  | data: 0.0000 | grad: -1.5648 }"]
+    175 [label="{ xi*wi | data: 0.9157 | grad: -1.5648 }"]
+    175999 [label="*" shape=circle]
+    176 [label="{  | data: 0.9157 | grad: -1.5648 }"]
+    176999 [label="+" shape=circle]
+    177 [label="{ xi*wi | data: -0.0018 | grad: -1.5648 }"]
+    177999 [label="*" shape=circle]
+    178 [label="{  | data: 0.9140 | grad: -1.5648 }"]
+    178999 [label="+" shape=circle]
+    179 [label="{ xi*wi | data: 0.6935 | grad: -1.5648 }"]
+    179999 [label="*" shape=circle]
+    180 [label="{  | data: 1.6074 | grad: -1.5648 }"]
+    180999 [label="+" shape=circle]
+    181 [label="{ xi*wi | data: -0.6766 | grad: -1.5648 }"]
+    181999 [label="*" shape=circle]
+    182 [label="{  | data: 0.9308 | grad: -1.5648 }"]
+    182999 [label="+" shape=circle]
+    183 [label="{ xw+b | data: 1.5495 | grad: -1.5648 }"]
+    183999 [label="+" shape=circle]
+    184 [label="{  | data: 0.9137 | grad: -1.5648 }"]
+    184999 [label="tanh" shape=circle]
+    185 [label="{  | data: 0.0000 | grad: -3.9306 }"]
+    186 [label="{ xi*wi | data: 0.8566 | grad: -3.9306 }"]
+    186999 [label="*" shape=circle]
+    187 [label="{  | data: 0.8566 | grad: -3.9306 }"]
+    187999 [label="+" shape=circle]
+    188 [label="{ xi*wi | data: -0.0128 | grad: -3.9306 }"]
+    188999 [label="*" shape=circle]
+    189 [label="{  | data: 0.8438 | grad: -3.9306 }"]
+    189999 [label="+" shape=circle]
+    190 [label="{ xi*wi | data: -0.4499 | grad: -3.9306 }"]
+    190999 [label="*" shape=circle]
+    191 [label="{  | data: 0.3940 | grad: -3.9306 }"]
+    191999 [label="+" shape=circle]
+    192 [label="{ xi*wi | data: 0.8814 | grad: -3.9306 }"]
+    192999 [label="*" shape=circle]
+    193 [label="{  | data: 1.2753 | grad: -3.9306 }"]
+    193999 [label="+" shape=circle]
+    194 [label="{ xw+b | data: 0.4235 | grad: -3.9306 }"]
+    194999 [label="+" shape=circle]
+    195 [label="{  | data: 0.3999 | grad: -3.9306 }"]
+    195999 [label="tanh" shape=circle]
+    196 [label="{  | data: 0.0000 | grad: -2.4550 }"]
+    197 [label="{ xi*wi | data: -0.1308 | grad: -2.4550 }"]
+    197999 [label="*" shape=circle]
+    198 [label="{  | data: -0.1308 | grad: -2.4550 }"]
+    198999 [label="+" shape=circle]
+    199 [label="{ xi*wi | data: 0.0214 | grad: -2.4550 }"]
+    199999 [label="*" shape=circle]
+    200 [label="{  | data: -0.1094 | grad: -2.4550 }"]
+    200999 [label="+" shape=circle]
+    201 [label="{ xi*wi | data: -0.7057 | grad: -2.4550 }"]
+    201999 [label="*" shape=circle]
+    202 [label="{  | data: -0.8150 | grad: -2.4550 }"]
+    202999 [label="+" shape=circle]
+    203 [label="{ xi*wi | data: -0.6242 | grad: -2.4550 }"]
+    203999 [label="*" shape=circle]
+    204 [label="{  | data: -1.4392 | grad: -2.4550 }"]
+    204999 [label="+" shape=circle]
+    205 [label="{ xw+b | data: -0.5255 | grad: -2.4550 }"]
+    205999 [label="+" shape=circle]
+    206 [label="{  | data: -0.4819 | grad: -2.4550 }"]
+    206999 [label="tanh" shape=circle]
+    207 [label="{  | data: 0.0000 | grad: -2.4512 }"]
+    208 [label="{ xi*wi | data: 0.1823 | grad: -2.4512 }"]
+    208999 [label="*" shape=circle]
+    209 [label="{  | data: 0.1823 | grad: -2.4512 }"]
+    209999 [label="+" shape=circle]
+    210 [label="{ xi*wi | data: -0.0086 | grad: -2.4512 }"]
+    210999 [label="*" shape=circle]
+    211 [label="{  | data: 0.1737 | grad: -2.4512 }"]
+    211999 [label="+" shape=circle]
+    212 [label="{ xi*wi | data: 0.2441 | grad: -2.4512 }"]
+    212999 [label="*" shape=circle]
+    213 [label="{  | data: 0.4178 | grad: -2.4512 }"]
+    213999 [label="+" shape=circle]
+    214 [label="{ xi*wi | data: 0.3522 | grad: -2.4512 }"]
+    214999 [label="*" shape=circle]
+    215 [label="{  | data: 0.7700 | grad: -2.4512 }"]
+    215999 [label="+" shape=circle]
+    216 [label="{ xw+b | data: 0.4921 | grad: -2.4512 }"]
+    216999 [label="+" shape=circle]
+    217 [label="{  | data: 0.4559 | grad: -2.4512 }"]
+    217999 [label="tanh" shape=circle]
+    218 [label="{  | data: 0.0000 | grad: -4.0000 }"]
+    219 [label="{ xi*wi | data: 0.3574 | grad: -4.0000 }"]
+    219999 [label="*" shape=circle]
+    220 [label="{  | data: 0.3574 | grad: -4.0000 }"]
+    220999 [label="+" shape=circle]
+    221 [label="{ xi*wi | data: 0.3929 | grad: -4.0000 }"]
+    221999 [label="*" shape=circle]
+    222 [label="{  | data: 0.7504 | grad: -4.0000 }"]
+    222999 [label="+" shape=circle]
+    223 [label="{ xi*wi | data: -0.2958 | grad: -4.0000 }"]
+    223999 [label="*" shape=circle]
+    224 [label="{  | data: 0.4546 | grad: -4.0000 }"]
+    224999 [label="+" shape=circle]
+    225 [label="{ xi*wi | data: 0.2794 | grad: -4.0000 }"]
+    225999 [label="*" shape=circle]
+    226 [label="{  | data: 0.7340 | grad: -4.0000 }"]
+    226999 [label="+" shape=circle]
+    227 [label="{ xw+b | data: 0.7854 | grad: -4.0000 }"]
+    227999 [label="+" shape=circle]
+    228 [label="{  | data: 0.6558 | grad: -4.0000 }"]
+    228999 [label="tanh" shape=circle]
+    229 [label="{ x | data: 0.5000 | grad: -2.5122 }"]
+    230 [label="{ x | data: 1.0000 | grad: 0.8349 }"]
+    231 [label="{ x | data: 1.0000 | grad: 6.3345 }"]
+    232 [label="{  | data: 0.0000 | grad: -5.0992 }"]
+    233 [label="{ xi*wi | data: 0.2230 | grad: -5.0992 }"]
+    233999 [label="*" shape=circle]
+    234 [label="{  | data: 0.2230 | grad: -5.0992 }"]
+    234999 [label="+" shape=circle]
+    235 [label="{ xi*wi | data: -0.3624 | grad: -5.0992 }"]
+    235999 [label="*" shape=circle]
+    236 [label="{  | data: -0.1394 | grad: -5.0992 }"]
+    236999 [label="+" shape=circle]
+    237 [label="{ xi*wi | data: -0.7856 | grad: -5.0992 }"]
+    237999 [label="*" shape=circle]
+    238 [label="{  | data: -0.9250 | grad: -5.0992 }"]
+    238999 [label="+" shape=circle]
+    239 [label="{ xw+b | data: -0.2043 | grad: -5.0992 }"]
+    239999 [label="+" shape=circle]
+    240 [label="{  | data: -0.2015 | grad: -5.0992 }"]
+    240999 [label="tanh" shape=circle]
+    241 [label="{  | data: 0.0000 | grad: 0.8956 }"]
+    242 [label="{ xi*wi | data: -0.1252 | grad: 0.8956 }"]
+    242999 [label="*" shape=circle]
+    243 [label="{  | data: -0.1252 | grad: 0.8956 }"]
+    243999 [label="+" shape=circle]
+    244 [label="{ xi*wi | data: -0.1478 | grad: 0.8956 }"]
+    244999 [label="*" shape=circle]
+    245 [label="{  | data: -0.2730 | grad: 0.8956 }"]
+    245999 [label="+" shape=circle]
+    246 [label="{ xi*wi | data: 0.0321 | grad: 0.8956 }"]
+    246999 [label="*" shape=circle]
+    247 [label="{  | data: -0.2409 | grad: 0.8956 }"]
+    247999 [label="+" shape=circle]
+    248 [label="{ xw+b | data: 0.3709 | grad: 0.8956 }"]
+    248999 [label="+" shape=circle]
+    249 [label="{  | data: 0.3547 | grad: 0.8956 }"]
+    249999 [label="tanh" shape=circle]
+    250 [label="{  | data: 0.0000 | grad: 1.8312 }"]
+    251 [label="{ xi*wi | data: 0.3400 | grad: 1.8312 }"]
+    251999 [label="*" shape=circle]
+    252 [label="{  | data: 0.3400 | grad: 1.8312 }"]
+    252999 [label="+" shape=circle]
+    253 [label="{ xi*wi | data: -0.7553 | grad: 1.8312 }"]
+    253999 [label="*" shape=circle]
+    254 [label="{  | data: -0.4152 | grad: 1.8312 }"]
+    254999 [label="+" shape=circle]
+    255 [label="{ xi*wi | data: 0.3835 | grad: 1.8312 }"]
+    255999 [label="*" shape=circle]
+    256 [label="{  | data: -0.0317 | grad: 1.8312 }"]
+    256999 [label="+" shape=circle]
+    257 [label="{ xw+b | data: -0.2396 | grad: 1.8312 }"]
+    257999 [label="+" shape=circle]
+    258 [label="{  | data: -0.2352 | grad: 1.8312 }"]
+    258999 [label="tanh" shape=circle]
+    259 [label="{  | data: 0.0000 | grad: 1.8075 }"]
+    260 [label="{ xi*wi | data: -0.3482 | grad: 1.8075 }"]
+    260999 [label="*" shape=circle]
+    261 [label="{  | data: -0.3482 | grad: 1.8075 }"]
+    261999 [label="+" shape=circle]
+    262 [label="{ xi*wi | data: 0.2780 | grad: 1.8075 }"]
+    262999 [label="*" shape=circle]
+    263 [label="{  | data: -0.0702 | grad: 1.8075 }"]
+    263999 [label="+" shape=circle]
+    264 [label="{ xi*wi | data: 0.8838 | grad: 1.8075 }"]
+    264999 [label="*" shape=circle]
+    265 [label="{  | data: 0.8136 | grad: 1.8075 }"]
+    265999 [label="+" shape=circle]
+    266 [label="{ xw+b | data: 0.7837 | grad: 1.8075 }"]
+    266999 [label="+" shape=circle]
+    267 [label="{  | data: 0.6548 | grad: 1.8075 }"]
+    267999 [label="tanh" shape=circle]
+    268 [label="{  | data: 0.0000 | grad: -1.5648 }"]
+    269 [label="{ xi*wi | data: -0.1910 | grad: -1.5648 }"]
+    269999 [label="*" shape=circle]
+    270 [label="{  | data: -0.1910 | grad: -1.5648 }"]
+    270999 [label="+" shape=circle]
+    271 [label="{ xi*wi | data: -0.0262 | grad: -1.5648 }"]
+    271999 [label="*" shape=circle]
+    272 [label="{  | data: -0.2172 | grad: -1.5648 }"]
+    272999 [label="+" shape=circle]
+    273 [label="{ xi*wi | data: -0.1643 | grad: -1.5648 }"]
+    273999 [label="*" shape=circle]
+    274 [label="{  | data: -0.3815 | grad: -1.5648 }"]
+    274999 [label="+" shape=circle]
+    275 [label="{ xi*wi | data: 0.4612 | grad: -1.5648 }"]
+    275999 [label="*" shape=circle]
+    276 [label="{  | data: 0.0796 | grad: -1.5648 }"]
+    276999 [label="+" shape=circle]
+    277 [label="{ xw+b | data: 0.6982 | grad: -1.5648 }"]
+    277999 [label="+" shape=circle]
+    278 [label="{  | data: 0.6033 | grad: -1.5648 }"]
+    278999 [label="tanh" shape=circle]
+    279 [label="{  | data: 0.0000 | grad: -3.9306 }"]
+    280 [label="{ xi*wi | data: -0.1787 | grad: -3.9306 }"]
+    280999 [label="*" shape=circle]
+    281 [label="{  | data: -0.1787 | grad: -3.9306 }"]
+    281999 [label="+" shape=circle]
+    282 [label="{ xi*wi | data: -0.1879 | grad: -3.9306 }"]
+    282999 [label="*" shape=circle]
+    283 [label="{  | data: -0.3665 | grad: -3.9306 }"]
+    283999 [label="+" shape=circle]
+    284 [label="{ xi*wi | data: 0.1066 | grad: -3.9306 }"]
+    284999 [label="*" shape=circle]
+    285 [label="{  | data: -0.2599 | grad: -3.9306 }"]
+    285999 [label="+" shape=circle]
+    286 [label="{ xi*wi | data: -0.6007 | grad: -3.9306 }"]
+    286999 [label="*" shape=circle]
+    287 [label="{  | data: -0.8607 | grad: -3.9306 }"]
+    287999 [label="+" shape=circle]
+    288 [label="{ xw+b | data: -1.7125 | grad: -3.9306 }"]
+    288999 [label="+" shape=circle]
+    289 [label="{  | data: -0.9370 | grad: -3.9306 }"]
+    289999 [label="tanh" shape=circle]
+    290 [label="{  | data: 0.0000 | grad: -2.4550 }"]
+    291 [label="{ xi*wi | data: 0.0273 | grad: -2.4550 }"]
+    291999 [label="*" shape=circle]
+    292 [label="{  | data: 0.0273 | grad: -2.4550 }"]
+    292999 [label="+" shape=circle]
+    293 [label="{ xi*wi | data: 0.3150 | grad: -2.4550 }"]
+    293999 [label="*" shape=circle]
+    294 [label="{  | data: 0.3423 | grad: -2.4550 }"]
+    294999 [label="+" shape=circle]
+    295 [label="{ xi*wi | data: 0.1672 | grad: -2.4550 }"]
+    295999 [label="*" shape=circle]
+    296 [label="{  | data: 0.5095 | grad: -2.4550 }"]
+    296999 [label="+" shape=circle]
+    297 [label="{ xi*wi | data: 0.4255 | grad: -2.4550 }"]
+    297999 [label="*" shape=circle]
+    298 [label="{  | data: 0.9350 | grad: -2.4550 }"]
+    298999 [label="+" shape=circle]
+    299 [label="{ xw+b | data: 1.8487 | grad: -2.4550 }"]
+    299999 [label="+" shape=circle]
+    300 [label="{  | data: 0.9516 | grad: -2.4550 }"]
+    300999 [label="tanh" shape=circle]
+    301 [label="{  | data: 0.0000 | grad: -2.4512 }"]
+    302 [label="{ xi*wi | data: -0.0380 | grad: -2.4512 }"]
+    302999 [label="*" shape=circle]
+    303 [label="{  | data: -0.0380 | grad: -2.4512 }"]
+    303999 [label="+" shape=circle]
+    304 [label="{ xi*wi | data: -0.1272 | grad: -2.4512 }"]
+    304999 [label="*" shape=circle]
+    305 [label="{  | data: -0.1652 | grad: -2.4512 }"]
+    305999 [label="+" shape=circle]
+    306 [label="{ xi*wi | data: -0.0578 | grad: -2.4512 }"]
+    306999 [label="*" shape=circle]
+    307 [label="{  | data: -0.2230 | grad: -2.4512 }"]
+    307999 [label="+" shape=circle]
+    308 [label="{ xi*wi | data: -0.2401 | grad: -2.4512 }"]
+    308999 [label="*" shape=circle]
+    309 [label="{  | data: -0.4631 | grad: -2.4512 }"]
+    309999 [label="+" shape=circle]
+    310 [label="{ xw+b | data: -0.7409 | grad: -2.4512 }"]
+    310999 [label="+" shape=circle]
+    311 [label="{  | data: -0.6297 | grad: -2.4512 }"]
+    311999 [label="tanh" shape=circle]
+    312 [label="{  | data: 0.0000 | grad: -4.0000 }"]
+    313 [label="{ xi*wi | data: 0.2360 | grad: -4.0000 }"]
+    313999 [label="*" shape=circle]
+    314 [label="{  | data: 0.2360 | grad: -4.0000 }"]
+    314999 [label="+" shape=circle]
+    315 [label="{ xi*wi | data: -0.9207 | grad: -4.0000 }"]
+    315999 [label="*" shape=circle]
+    316 [label="{  | data: -0.6847 | grad: -4.0000 }"]
+    316999 [label="+" shape=circle]
+    317 [label="{ xi*wi | data: 0.5841 | grad: -4.0000 }"]
+    317999 [label="*" shape=circle]
+    318 [label="{  | data: -0.1006 | grad: -4.0000 }"]
+    318999 [label="+" shape=circle]
+    319 [label="{ xi*wi | data: -0.3859 | grad: -4.0000 }"]
+    319999 [label="*" shape=circle]
+    320 [label="{  | data: -0.4865 | grad: -4.0000 }"]
+    320999 [label="+" shape=circle]
+    321 [label="{ xw+b | data: -0.4352 | grad: -4.0000 }"]
+    321999 [label="+" shape=circle]
+    322 [label="{  | data: -0.4096 | grad: -4.0000 }"]
+    322999 [label="tanh" shape=circle]
+    323 [label="{ x | data: 1.0000 | grad: -2.5122 }"]
+    324 [label="{ x | data: 1.0000 | grad: 0.8349 }"]
+    325 [label="{ x | data: -1.0000 | grad: 6.3345 }"]
+    326 [label="{  | data: 0.0000 | grad: -5.0992 }"]
+    327 [label="{ xi*wi | data: 0.4460 | grad: -5.0992 }"]
+    327999 [label="*" shape=circle]
+    328 [label="{  | data: 0.4460 | grad: -5.0992 }"]
+    328999 [label="+" shape=circle]
+    329 [label="{ xi*wi | data: -0.3624 | grad: -5.0992 }"]
+    329999 [label="*" shape=circle]
+    330 [label="{  | data: 0.0836 | grad: -5.0992 }"]
+    330999 [label="+" shape=circle]
+    331 [label="{ xi*wi | data: 0.7856 | grad: -5.0992 }"]
+    331999 [label="*" shape=circle]
+    332 [label="{  | data: 0.8692 | grad: -5.0992 }"]
+    332999 [label="+" shape=circle]
+    333 [label="{ xw+b | data: 1.5899 | grad: -5.0992 }"]
+    333999 [label="+" shape=circle]
+    334 [label="{  | data: 0.9201 | grad: -5.0992 }"]
+    334999 [label="tanh" shape=circle]
+    335 [label="{  | data: 0.0000 | grad: 0.8956 }"]
+    336 [label="{ xi*wi | data: -0.2505 | grad: 0.8956 }"]
+    336999 [label="*" shape=circle]
+    337 [label="{  | data: -0.2505 | grad: 0.8956 }"]
+    337999 [label="+" shape=circle]
+    338 [label="{ xi*wi | data: -0.1478 | grad: 0.8956 }"]
+    338999 [label="*" shape=circle]
+    339 [label="{  | data: -0.3982 | grad: 0.8956 }"]
+    339999 [label="+" shape=circle]
+    340 [label="{ xi*wi | data: -0.0321 | grad: 0.8956 }"]
+    340999 [label="*" shape=circle]
+    341 [label="{  | data: -0.4304 | grad: 0.8956 }"]
+    341999 [label="+" shape=circle]
+    342 [label="{ xw+b | data: 0.1813 | grad: 0.8956 }"]
+    342999 [label="+" shape=circle]
+    343 [label="{  | data: 0.1794 | grad: 0.8956 }"]
+    343999 [label="tanh" shape=circle]
+    344 [label="{  | data: 0.0000 | grad: 1.8312 }"]
+    345 [label="{ xi*wi | data: 0.6800 | grad: 1.8312 }"]
+    345999 [label="*" shape=circle]
+    346 [label="{  | data: 0.6800 | grad: 1.8312 }"]
+    346999 [label="+" shape=circle]
+    347 [label="{ xi*wi | data: -0.7553 | grad: 1.8312 }"]
+    347999 [label="*" shape=circle]
+    348 [label="{  | data: -0.0752 | grad: 1.8312 }"]
+    348999 [label="+" shape=circle]
+    349 [label="{ xi*wi | data: -0.3835 | grad: 1.8312 }"]
+    349999 [label="*" shape=circle]
+    350 [label="{  | data: -0.4587 | grad: 1.8312 }"]
+    350999 [label="+" shape=circle]
+    351 [label="{ xw+b | data: -0.6666 | grad: 1.8312 }"]
+    351999 [label="+" shape=circle]
+    352 [label="{  | data: -0.5828 | grad: 1.8312 }"]
+    352999 [label="tanh" shape=circle]
+    353 [label="{  | data: 0.0000 | grad: 1.8075 }"]
+    354 [label="{ xi*wi | data: -0.6965 | grad: 1.8075 }"]
+    354999 [label="*" shape=circle]
+    355 [label="{  | data: -0.6965 | grad: 1.8075 }"]
+    355999 [label="+" shape=circle]
+    356 [label="{ xi*wi | data: 0.2780 | grad: 1.8075 }"]
+    356999 [label="*" shape=circle]
+    357 [label="{  | data: -0.4185 | grad: 1.8075 }"]
+    357999 [label="+" shape=circle]
+    358 [label="{ xi*wi | data: -0.8838 | grad: 1.8075 }"]
+    358999 [label="*" shape=circle]
+    359 [label="{  | data: -1.3023 | grad: 1.8075 }"]
+    359999 [label="+" shape=circle]
+    360 [label="{ xw+b | data: -1.3321 | grad: 1.8075 }"]
+    360999 [label="+" shape=circle]
+    361 [label="{  | data: -0.8698 | grad: 1.8075 }"]
+    361999 [label="tanh" shape=circle]
+    362 [label="{  | data: 0.0000 | grad: -1.5648 }"]
+    363 [label="{ xi*wi | data: 0.8723 | grad: -1.5648 }"]
+    363999 [label="*" shape=circle]
+    364 [label="{  | data: 0.8723 | grad: -1.5648 }"]
+    364999 [label="+" shape=circle]
+    365 [label="{ xi*wi | data: -0.0133 | grad: -1.5648 }"]
+    365999 [label="*" shape=circle]
+    366 [label="{  | data: 0.8590 | grad: -1.5648 }"]
+    366999 [label="+" shape=circle]
+    367 [label="{ xi*wi | data: -0.4072 | grad: -1.5648 }"]
+    367999 [label="*" shape=circle]
+    368 [label="{  | data: 0.4518 | grad: -1.5648 }"]
+    368999 [label="+" shape=circle]
+    369 [label="{ xi*wi | data: -0.6125 | grad: -1.5648 }"]
+    369999 [label="*" shape=circle]
+    370 [label="{  | data: -0.1607 | grad: -1.5648 }"]
+    370999 [label="+" shape=circle]
+    371 [label="{ xw+b | data: 0.4579 | grad: -1.5648 }"]
+    371999 [label="+" shape=circle]
+    372 [label="{  | data: 0.4284 | grad: -1.5648 }"]
+    372999 [label="tanh" shape=circle]
+    373 [label="{  | data: 0.0000 | grad: -3.9306 }"]
+    374 [label="{ xi*wi | data: 0.8160 | grad: -3.9306 }"]
+    374999 [label="*" shape=circle]
+    375 [label="{  | data: 0.8160 | grad: -3.9306 }"]
+    375999 [label="+" shape=circle]
+    376 [label="{ xi*wi | data: -0.0950 | grad: -3.9306 }"]
+    376999 [label="*" shape=circle]
+    377 [label="{  | data: 0.7210 | grad: -3.9306 }"]
+    377999 [label="+" shape=circle]
+    378 [label="{ xi*wi | data: 0.2642 | grad: -3.9306 }"]
+    378999 [label="*" shape=circle]
+    379 [label="{  | data: 0.9852 | grad: -3.9306 }"]
+    379999 [label="+" shape=circle]
+    380 [label="{ xi*wi | data: 0.7979 | grad: -3.9306 }"]
+    380999 [label="*" shape=circle]
+    381 [label="{  | data: 1.7831 | grad: -3.9306 }"]
+    381999 [label="+" shape=circle]
+    382 [label="{ xw+b | data: 0.9312 | grad: -3.9306 }"]
+    382999 [label="+" shape=circle]
+    383 [label="{  | data: 0.7312 | grad: -3.9306 }"]
+    383999 [label="tanh" shape=circle]
+    384 [label="{  | data: 0.0000 | grad: -2.4550 }"]
+    385 [label="{ xi*wi | data: -0.1246 | grad: -2.4550 }"]
+    385999 [label="*" shape=circle]
+    386 [label="{  | data: -0.1246 | grad: -2.4550 }"]
+    386999 [label="+" shape=circle]
+    387 [label="{ xi*wi | data: 0.1593 | grad: -2.4550 }"]
+    387999 [label="*" shape=circle]
+    388 [label="{  | data: 0.0347 | grad: -2.4550 }"]
+    388999 [label="+" shape=circle]
+    389 [label="{ xi*wi | data: 0.4144 | grad: -2.4550 }"]
+    389999 [label="*" shape=circle]
+    390 [label="{  | data: 0.4491 | grad: -2.4550 }"]
+    390999 [label="+" shape=circle]
+    391 [label="{ xi*wi | data: -0.5651 | grad: -2.4550 }"]
+    391999 [label="*" shape=circle]
+    392 [label="{  | data: -0.1159 | grad: -2.4550 }"]
+    392999 [label="+" shape=circle]
+    393 [label="{ xw+b | data: 0.7978 | grad: -2.4550 }"]
+    393999 [label="+" shape=circle]
+    394 [label="{  | data: 0.6628 | grad: -2.4550 }"]
+    394999 [label="tanh" shape=circle]
+    395 [label="{  | data: 0.0000 | grad: -2.4512 }"]
+    396 [label="{ xi*wi | data: 0.1736 | grad: -2.4512 }"]
+    396999 [label="*" shape=circle]
+    397 [label="{  | data: 0.1736 | grad: -2.4512 }"]
+    397999 [label="+" shape=circle]
+    398 [label="{ xi*wi | data: -0.0643 | grad: -2.4512 }"]
+    398999 [label="*" shape=circle]
+    399 [label="{  | data: 0.1093 | grad: -2.4512 }"]
+    399999 [label="+" shape=circle]
+    400 [label="{ xi*wi | data: -0.1434 | grad: -2.4512 }"]
+    400999 [label="*" shape=circle]
+    401 [label="{  | data: -0.0340 | grad: -2.4512 }"]
+    401999 [label="+" shape=circle]
+    402 [label="{ xi*wi | data: 0.3189 | grad: -2.4512 }"]
+    402999 [label="*" shape=circle]
+    403 [label="{  | data: 0.2848 | grad: -2.4512 }"]
+    403999 [label="+" shape=circle]
+    404 [label="{ xw+b | data: 0.0070 | grad: -2.4512 }"]
+    404999 [label="+" shape=circle]
+    405 [label="{  | data: 0.0070 | grad: -2.4512 }"]
+    405999 [label="tanh" shape=circle]
+    406 [label="{  | data: 0.0000 | grad: -4.0000 }"]
+    407 [label="{ xi*wi | data: 0.1676 | grad: -4.0000 }"]
+    407999 [label="*" shape=circle]
+    408 [label="{  | data: 0.1676 | grad: -4.0000 }"]
+    408999 [label="+" shape=circle]
+    409 [label="{ xi*wi | data: 0.7185 | grad: -4.0000 }"]
+    409999 [label="*" shape=circle]
+    410 [label="{  | data: 0.8861 | grad: -4.0000 }"]
+    410999 [label="+" shape=circle]
+    411 [label="{ xi*wi | data: 0.4068 | grad: -4.0000 }"]
+    411999 [label="*" shape=circle]
+    412 [label="{  | data: 1.2929 | grad: -4.0000 }"]
+    412999 [label="+" shape=circle]
+    413 [label="{ xi*wi | data: 0.0043 | grad: -4.0000 }"]
+    413999 [label="*" shape=circle]
+    414 [label="{  | data: 1.2972 | grad: -4.0000 }"]
+    414999 [label="+" shape=circle]
+    415 [label="{ xw+b | data: 1.3485 | grad: -4.0000 }"]
+    415999 [label="+" shape=circle]
+    416 [label="{  | data: 0.8737 | grad: -4.0000 }"]
+    416999 [label="tanh" shape=circle]
+    417 [label="{ result | data: 0.0000 | grad: 1.0000 }"]
+    418 [label="{ y | data: 1.0000 | grad: -4.0000 }"]
+    419 [label="{ E | data: 0.1236 | grad: 4.0000 }"]
+    419999 [label="-" shape=circle]
+    420 [label="{ 2 | data: 2.0000 | grad: 0.0673 }"]
+    421 [label="{ SE | data: 0.0153 | grad: 1.0000 }"]
+    421999 [label="^" shape=circle]
+    422 [label="{ L | data: 0.0153 | grad: 1.0000 }"]
+    422999 [label="+" shape=circle]
+    423 [label="{ y | data: -1.0000 | grad: -4.0000 }"]
+    424 [label="{ E | data: -1.6558 | grad: 4.0000 }"]
+    424999 [label="-" shape=circle]
+    425 [label="{ 2 | data: 2.0000 | grad: -0.2627 }"]
+    426 [label="{ SE | data: 2.7416 | grad: 1.0000 }"]
+    426999 [label="^" shape=circle]
+    427 [label="{ L | data: 2.7568 | grad: 1.0000 }"]
+    427999 [label="+" shape=circle]
+    428 [label="{ y | data: -1.0000 | grad: -4.0000 }"]
+    429 [label="{ E | data: -0.5904 | grad: 4.0000 }"]
+    429999 [label="-" shape=circle]
+    430 [label="{ 2 | data: 2.0000 | grad: -0.1961 }"]
+    431 [label="{ SE | data: 0.3485 | grad: 1.0000 }"]
+    431999 [label="^" shape=circle]
+    432 [label="{ L | data: 3.1054 | grad: 1.0000 }"]
+    432999 [label="+" shape=circle]
+    433 [label="{ y | data: 0.0000 | grad: -4.0000 }"]
+    434 [label="{ E | data: -0.8737 | grad: 4.0000 }"]
+    434999 [label="-" shape=circle]
+    435 [label="{ 2 | data: 2.0000 | grad: -0.2384 }"]
+    436 [label="{ SE | data: 0.7634 | grad: 1.0000 }"]
+    436999 [label="^" shape=circle]
+    437 [label="{ L | data: 3.8687 | grad: 1.0000 }"]
+    437999 [label="+" shape=circle]
 
     41 -> 45999
     45999 -> 45
@@ -529,4 +1090,982 @@ node [shape=record]
 
     133 -> 134999
     134999 -> 134
+    135 -> 139999
+    139999 -> 139
+    0 -> 139999
+
+    138 -> 140999
+    140999 -> 140
+    139 -> 140999
+
+    136 -> 141999
+    141999 -> 141
+    1 -> 141999
+
+    140 -> 142999
+    142999 -> 142
+    141 -> 142999
+
+    137 -> 143999
+    143999 -> 143
+    2 -> 143999
+
+    142 -> 144999
+    144999 -> 144
+    143 -> 144999
+
+    144 -> 145999
+    145999 -> 145
+    3 -> 145999
+
+    145 -> 146999
+    146999 -> 146
+    135 -> 148999
+    148999 -> 148
+    4 -> 148999
+
+    147 -> 149999
+    149999 -> 149
+    148 -> 149999
+
+    136 -> 150999
+    150999 -> 150
+    5 -> 150999
+
+    149 -> 151999
+    151999 -> 151
+    150 -> 151999
+
+    137 -> 152999
+    152999 -> 152
+    6 -> 152999
+
+    151 -> 153999
+    153999 -> 153
+    152 -> 153999
+
+    153 -> 154999
+    154999 -> 154
+    7 -> 154999
+
+    154 -> 155999
+    155999 -> 155
+    135 -> 157999
+    157999 -> 157
+    8 -> 157999
+
+    156 -> 158999
+    158999 -> 158
+    157 -> 158999
+
+    136 -> 159999
+    159999 -> 159
+    9 -> 159999
+
+    158 -> 160999
+    160999 -> 160
+    159 -> 160999
+
+    137 -> 161999
+    161999 -> 161
+    10 -> 161999
+
+    160 -> 162999
+    162999 -> 162
+    161 -> 162999
+
+    162 -> 163999
+    163999 -> 163
+    11 -> 163999
+
+    163 -> 164999
+    164999 -> 164
+    135 -> 166999
+    166999 -> 166
+    12 -> 166999
+
+    165 -> 167999
+    167999 -> 167
+    166 -> 167999
+
+    136 -> 168999
+    168999 -> 168
+    13 -> 168999
+
+    167 -> 169999
+    169999 -> 169
+    168 -> 169999
+
+    137 -> 170999
+    170999 -> 170
+    14 -> 170999
+
+    169 -> 171999
+    171999 -> 171
+    170 -> 171999
+
+    171 -> 172999
+    172999 -> 172
+    15 -> 172999
+
+    172 -> 173999
+    173999 -> 173
+    146 -> 175999
+    175999 -> 175
+    16 -> 175999
+
+    174 -> 176999
+    176999 -> 176
+    175 -> 176999
+
+    155 -> 177999
+    177999 -> 177
+    17 -> 177999
+
+    176 -> 178999
+    178999 -> 178
+    177 -> 178999
+
+    164 -> 179999
+    179999 -> 179
+    18 -> 179999
+
+    178 -> 180999
+    180999 -> 180
+    179 -> 180999
+
+    173 -> 181999
+    181999 -> 181
+    19 -> 181999
+
+    180 -> 182999
+    182999 -> 182
+    181 -> 182999
+
+    182 -> 183999
+    183999 -> 183
+    20 -> 183999
+
+    183 -> 184999
+    184999 -> 184
+    146 -> 186999
+    186999 -> 186
+    21 -> 186999
+
+    185 -> 187999
+    187999 -> 187
+    186 -> 187999
+
+    155 -> 188999
+    188999 -> 188
+    22 -> 188999
+
+    187 -> 189999
+    189999 -> 189
+    188 -> 189999
+
+    164 -> 190999
+    190999 -> 190
+    23 -> 190999
+
+    189 -> 191999
+    191999 -> 191
+    190 -> 191999
+
+    173 -> 192999
+    192999 -> 192
+    24 -> 192999
+
+    191 -> 193999
+    193999 -> 193
+    192 -> 193999
+
+    193 -> 194999
+    194999 -> 194
+    25 -> 194999
+
+    194 -> 195999
+    195999 -> 195
+    146 -> 197999
+    197999 -> 197
+    26 -> 197999
+
+    196 -> 198999
+    198999 -> 198
+    197 -> 198999
+
+    155 -> 199999
+    199999 -> 199
+    27 -> 199999
+
+    198 -> 200999
+    200999 -> 200
+    199 -> 200999
+
+    164 -> 201999
+    201999 -> 201
+    28 -> 201999
+
+    200 -> 202999
+    202999 -> 202
+    201 -> 202999
+
+    173 -> 203999
+    203999 -> 203
+    29 -> 203999
+
+    202 -> 204999
+    204999 -> 204
+    203 -> 204999
+
+    204 -> 205999
+    205999 -> 205
+    30 -> 205999
+
+    205 -> 206999
+    206999 -> 206
+    146 -> 208999
+    208999 -> 208
+    31 -> 208999
+
+    207 -> 209999
+    209999 -> 209
+    208 -> 209999
+
+    155 -> 210999
+    210999 -> 210
+    32 -> 210999
+
+    209 -> 211999
+    211999 -> 211
+    210 -> 211999
+
+    164 -> 212999
+    212999 -> 212
+    33 -> 212999
+
+    211 -> 213999
+    213999 -> 213
+    212 -> 213999
+
+    173 -> 214999
+    214999 -> 214
+    34 -> 214999
+
+    213 -> 215999
+    215999 -> 215
+    214 -> 215999
+
+    215 -> 216999
+    216999 -> 216
+    35 -> 216999
+
+    216 -> 217999
+    217999 -> 217
+    184 -> 219999
+    219999 -> 219
+    36 -> 219999
+
+    218 -> 220999
+    220999 -> 220
+    219 -> 220999
+
+    195 -> 221999
+    221999 -> 221
+    37 -> 221999
+
+    220 -> 222999
+    222999 -> 222
+    221 -> 222999
+
+    206 -> 223999
+    223999 -> 223
+    38 -> 223999
+
+    222 -> 224999
+    224999 -> 224
+    223 -> 224999
+
+    217 -> 225999
+    225999 -> 225
+    39 -> 225999
+
+    224 -> 226999
+    226999 -> 226
+    225 -> 226999
+
+    226 -> 227999
+    227999 -> 227
+    40 -> 227999
+
+    227 -> 228999
+    228999 -> 228
+    229 -> 233999
+    233999 -> 233
+    0 -> 233999
+
+    232 -> 234999
+    234999 -> 234
+    233 -> 234999
+
+    230 -> 235999
+    235999 -> 235
+    1 -> 235999
+
+    234 -> 236999
+    236999 -> 236
+    235 -> 236999
+
+    231 -> 237999
+    237999 -> 237
+    2 -> 237999
+
+    236 -> 238999
+    238999 -> 238
+    237 -> 238999
+
+    238 -> 239999
+    239999 -> 239
+    3 -> 239999
+
+    239 -> 240999
+    240999 -> 240
+    229 -> 242999
+    242999 -> 242
+    4 -> 242999
+
+    241 -> 243999
+    243999 -> 243
+    242 -> 243999
+
+    230 -> 244999
+    244999 -> 244
+    5 -> 244999
+
+    243 -> 245999
+    245999 -> 245
+    244 -> 245999
+
+    231 -> 246999
+    246999 -> 246
+    6 -> 246999
+
+    245 -> 247999
+    247999 -> 247
+    246 -> 247999
+
+    247 -> 248999
+    248999 -> 248
+    7 -> 248999
+
+    248 -> 249999
+    249999 -> 249
+    229 -> 251999
+    251999 -> 251
+    8 -> 251999
+
+    250 -> 252999
+    252999 -> 252
+    251 -> 252999
+
+    230 -> 253999
+    253999 -> 253
+    9 -> 253999
+
+    252 -> 254999
+    254999 -> 254
+    253 -> 254999
+
+    231 -> 255999
+    255999 -> 255
+    10 -> 255999
+
+    254 -> 256999
+    256999 -> 256
+    255 -> 256999
+
+    256 -> 257999
+    257999 -> 257
+    11 -> 257999
+
+    257 -> 258999
+    258999 -> 258
+    229 -> 260999
+    260999 -> 260
+    12 -> 260999
+
+    259 -> 261999
+    261999 -> 261
+    260 -> 261999
+
+    230 -> 262999
+    262999 -> 262
+    13 -> 262999
+
+    261 -> 263999
+    263999 -> 263
+    262 -> 263999
+
+    231 -> 264999
+    264999 -> 264
+    14 -> 264999
+
+    263 -> 265999
+    265999 -> 265
+    264 -> 265999
+
+    265 -> 266999
+    266999 -> 266
+    15 -> 266999
+
+    266 -> 267999
+    267999 -> 267
+    240 -> 269999
+    269999 -> 269
+    16 -> 269999
+
+    268 -> 270999
+    270999 -> 270
+    269 -> 270999
+
+    249 -> 271999
+    271999 -> 271
+    17 -> 271999
+
+    270 -> 272999
+    272999 -> 272
+    271 -> 272999
+
+    258 -> 273999
+    273999 -> 273
+    18 -> 273999
+
+    272 -> 274999
+    274999 -> 274
+    273 -> 274999
+
+    267 -> 275999
+    275999 -> 275
+    19 -> 275999
+
+    274 -> 276999
+    276999 -> 276
+    275 -> 276999
+
+    276 -> 277999
+    277999 -> 277
+    20 -> 277999
+
+    277 -> 278999
+    278999 -> 278
+    240 -> 280999
+    280999 -> 280
+    21 -> 280999
+
+    279 -> 281999
+    281999 -> 281
+    280 -> 281999
+
+    249 -> 282999
+    282999 -> 282
+    22 -> 282999
+
+    281 -> 283999
+    283999 -> 283
+    282 -> 283999
+
+    258 -> 284999
+    284999 -> 284
+    23 -> 284999
+
+    283 -> 285999
+    285999 -> 285
+    284 -> 285999
+
+    267 -> 286999
+    286999 -> 286
+    24 -> 286999
+
+    285 -> 287999
+    287999 -> 287
+    286 -> 287999
+
+    287 -> 288999
+    288999 -> 288
+    25 -> 288999
+
+    288 -> 289999
+    289999 -> 289
+    240 -> 291999
+    291999 -> 291
+    26 -> 291999
+
+    290 -> 292999
+    292999 -> 292
+    291 -> 292999
+
+    249 -> 293999
+    293999 -> 293
+    27 -> 293999
+
+    292 -> 294999
+    294999 -> 294
+    293 -> 294999
+
+    258 -> 295999
+    295999 -> 295
+    28 -> 295999
+
+    294 -> 296999
+    296999 -> 296
+    295 -> 296999
+
+    267 -> 297999
+    297999 -> 297
+    29 -> 297999
+
+    296 -> 298999
+    298999 -> 298
+    297 -> 298999
+
+    298 -> 299999
+    299999 -> 299
+    30 -> 299999
+
+    299 -> 300999
+    300999 -> 300
+    240 -> 302999
+    302999 -> 302
+    31 -> 302999
+
+    301 -> 303999
+    303999 -> 303
+    302 -> 303999
+
+    249 -> 304999
+    304999 -> 304
+    32 -> 304999
+
+    303 -> 305999
+    305999 -> 305
+    304 -> 305999
+
+    258 -> 306999
+    306999 -> 306
+    33 -> 306999
+
+    305 -> 307999
+    307999 -> 307
+    306 -> 307999
+
+    267 -> 308999
+    308999 -> 308
+    34 -> 308999
+
+    307 -> 309999
+    309999 -> 309
+    308 -> 309999
+
+    309 -> 310999
+    310999 -> 310
+    35 -> 310999
+
+    310 -> 311999
+    311999 -> 311
+    278 -> 313999
+    313999 -> 313
+    36 -> 313999
+
+    312 -> 314999
+    314999 -> 314
+    313 -> 314999
+
+    289 -> 315999
+    315999 -> 315
+    37 -> 315999
+
+    314 -> 316999
+    316999 -> 316
+    315 -> 316999
+
+    300 -> 317999
+    317999 -> 317
+    38 -> 317999
+
+    316 -> 318999
+    318999 -> 318
+    317 -> 318999
+
+    311 -> 319999
+    319999 -> 319
+    39 -> 319999
+
+    318 -> 320999
+    320999 -> 320
+    319 -> 320999
+
+    320 -> 321999
+    321999 -> 321
+    40 -> 321999
+
+    321 -> 322999
+    322999 -> 322
+    323 -> 327999
+    327999 -> 327
+    0 -> 327999
+
+    326 -> 328999
+    328999 -> 328
+    327 -> 328999
+
+    324 -> 329999
+    329999 -> 329
+    1 -> 329999
+
+    328 -> 330999
+    330999 -> 330
+    329 -> 330999
+
+    325 -> 331999
+    331999 -> 331
+    2 -> 331999
+
+    330 -> 332999
+    332999 -> 332
+    331 -> 332999
+
+    332 -> 333999
+    333999 -> 333
+    3 -> 333999
+
+    333 -> 334999
+    334999 -> 334
+    323 -> 336999
+    336999 -> 336
+    4 -> 336999
+
+    335 -> 337999
+    337999 -> 337
+    336 -> 337999
+
+    324 -> 338999
+    338999 -> 338
+    5 -> 338999
+
+    337 -> 339999
+    339999 -> 339
+    338 -> 339999
+
+    325 -> 340999
+    340999 -> 340
+    6 -> 340999
+
+    339 -> 341999
+    341999 -> 341
+    340 -> 341999
+
+    341 -> 342999
+    342999 -> 342
+    7 -> 342999
+
+    342 -> 343999
+    343999 -> 343
+    323 -> 345999
+    345999 -> 345
+    8 -> 345999
+
+    344 -> 346999
+    346999 -> 346
+    345 -> 346999
+
+    324 -> 347999
+    347999 -> 347
+    9 -> 347999
+
+    346 -> 348999
+    348999 -> 348
+    347 -> 348999
+
+    325 -> 349999
+    349999 -> 349
+    10 -> 349999
+
+    348 -> 350999
+    350999 -> 350
+    349 -> 350999
+
+    350 -> 351999
+    351999 -> 351
+    11 -> 351999
+
+    351 -> 352999
+    352999 -> 352
+    323 -> 354999
+    354999 -> 354
+    12 -> 354999
+
+    353 -> 355999
+    355999 -> 355
+    354 -> 355999
+
+    324 -> 356999
+    356999 -> 356
+    13 -> 356999
+
+    355 -> 357999
+    357999 -> 357
+    356 -> 357999
+
+    325 -> 358999
+    358999 -> 358
+    14 -> 358999
+
+    357 -> 359999
+    359999 -> 359
+    358 -> 359999
+
+    359 -> 360999
+    360999 -> 360
+    15 -> 360999
+
+    360 -> 361999
+    361999 -> 361
+    334 -> 363999
+    363999 -> 363
+    16 -> 363999
+
+    362 -> 364999
+    364999 -> 364
+    363 -> 364999
+
+    343 -> 365999
+    365999 -> 365
+    17 -> 365999
+
+    364 -> 366999
+    366999 -> 366
+    365 -> 366999
+
+    352 -> 367999
+    367999 -> 367
+    18 -> 367999
+
+    366 -> 368999
+    368999 -> 368
+    367 -> 368999
+
+    361 -> 369999
+    369999 -> 369
+    19 -> 369999
+
+    368 -> 370999
+    370999 -> 370
+    369 -> 370999
+
+    370 -> 371999
+    371999 -> 371
+    20 -> 371999
+
+    371 -> 372999
+    372999 -> 372
+    334 -> 374999
+    374999 -> 374
+    21 -> 374999
+
+    373 -> 375999
+    375999 -> 375
+    374 -> 375999
+
+    343 -> 376999
+    376999 -> 376
+    22 -> 376999
+
+    375 -> 377999
+    377999 -> 377
+    376 -> 377999
+
+    352 -> 378999
+    378999 -> 378
+    23 -> 378999
+
+    377 -> 379999
+    379999 -> 379
+    378 -> 379999
+
+    361 -> 380999
+    380999 -> 380
+    24 -> 380999
+
+    379 -> 381999
+    381999 -> 381
+    380 -> 381999
+
+    381 -> 382999
+    382999 -> 382
+    25 -> 382999
+
+    382 -> 383999
+    383999 -> 383
+    334 -> 385999
+    385999 -> 385
+    26 -> 385999
+
+    384 -> 386999
+    386999 -> 386
+    385 -> 386999
+
+    343 -> 387999
+    387999 -> 387
+    27 -> 387999
+
+    386 -> 388999
+    388999 -> 388
+    387 -> 388999
+
+    352 -> 389999
+    389999 -> 389
+    28 -> 389999
+
+    388 -> 390999
+    390999 -> 390
+    389 -> 390999
+
+    361 -> 391999
+    391999 -> 391
+    29 -> 391999
+
+    390 -> 392999
+    392999 -> 392
+    391 -> 392999
+
+    392 -> 393999
+    393999 -> 393
+    30 -> 393999
+
+    393 -> 394999
+    394999 -> 394
+    334 -> 396999
+    396999 -> 396
+    31 -> 396999
+
+    395 -> 397999
+    397999 -> 397
+    396 -> 397999
+
+    343 -> 398999
+    398999 -> 398
+    32 -> 398999
+
+    397 -> 399999
+    399999 -> 399
+    398 -> 399999
+
+    352 -> 400999
+    400999 -> 400
+    33 -> 400999
+
+    399 -> 401999
+    401999 -> 401
+    400 -> 401999
+
+    361 -> 402999
+    402999 -> 402
+    34 -> 402999
+
+    401 -> 403999
+    403999 -> 403
+    402 -> 403999
+
+    403 -> 404999
+    404999 -> 404
+    35 -> 404999
+
+    404 -> 405999
+    405999 -> 405
+    372 -> 407999
+    407999 -> 407
+    36 -> 407999
+
+    406 -> 408999
+    408999 -> 408
+    407 -> 408999
+
+    383 -> 409999
+    409999 -> 409
+    37 -> 409999
+
+    408 -> 410999
+    410999 -> 410
+    409 -> 410999
+
+    394 -> 411999
+    411999 -> 411
+    38 -> 411999
+
+    410 -> 412999
+    412999 -> 412
+    411 -> 412999
+
+    405 -> 413999
+    413999 -> 413
+    39 -> 413999
+
+    412 -> 414999
+    414999 -> 414
+    413 -> 414999
+
+    414 -> 415999
+    415999 -> 415
+    40 -> 415999
+
+    415 -> 416999
+    416999 -> 416
+    418 -> 419999
+    419999 -> 419
+    134 -> 419999
+
+    419 -> 421999
+    421999 -> 421
+    420 -> 421999
+
+    421 -> 422999
+    422999 -> 422
+    417 -> 422999
+
+    423 -> 424999
+    424999 -> 424
+    228 -> 424999
+
+    424 -> 426999
+    426999 -> 426
+    425 -> 426999
+
+    426 -> 427999
+    427999 -> 427
+    422 -> 427999
+
+    428 -> 429999
+    429999 -> 429
+    322 -> 429999
+
+    429 -> 431999
+    431999 -> 431
+    430 -> 431999
+
+    431 -> 432999
+    432999 -> 432
+    427 -> 432999
+
+    433 -> 434999
+    434999 -> 434
+    416 -> 434999
+
+    434 -> 436999
+    436999 -> 436
+    435 -> 436999
+
+    436 -> 437999
+    437999 -> 437
+    432 -> 437999
+
 }

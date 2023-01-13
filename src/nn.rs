@@ -48,6 +48,12 @@ impl Neuron {
 
         xw_bias_sum
     }
+
+    fn parameters(&self) -> Vec<NodeIndex> {
+        let mut params = self.weights.clone();
+        params.push(self.b);
+        params
+    }
 }
 
 impl fmt::Display for Neuron {
@@ -94,8 +100,14 @@ impl Layer {
         neuron_activations
     }
 
-    fn neuron_count(&self) -> usize {
-        self.neurons.len()
+    fn parameters(&self) -> Vec<NodeIndex> {
+        let mut params = Vec::new();
+
+        for neuron in &self.neurons {
+            params.extend(neuron.parameters());
+        }
+
+        params
     }
 }
 
@@ -129,7 +141,7 @@ impl<const L: usize> MLP<L> {
         Self { layers }
     }
 
-    pub fn call(&self, x: &[f64], cg: &mut ComputationGraph<f64>) {
+    pub fn call(&self, x: &[f64], cg: &mut ComputationGraph<f64>) -> NodeIndex {
         // initialize with inputs
         let mut layer_activations = x
             .iter()
@@ -137,8 +149,20 @@ impl<const L: usize> MLP<L> {
             .collect::<Vec<NodeIndex>>();
 
         for layer in &self.layers {
-            println!("layer: {}", layer.neuron_count());
             layer_activations = layer.call(&layer_activations, cg);
         }
+
+        // cg.get_node_data(layer_activations[0])
+        layer_activations[0]
+    }
+
+    pub fn parameters(&self) -> Vec<NodeIndex> {
+        let mut params = Vec::new();
+
+        for layer in &self.layers {
+            params.extend(layer.parameters());
+        }
+
+        params
     }
 }
